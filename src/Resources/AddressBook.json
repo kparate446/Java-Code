@@ -1,0 +1,41 @@
+[ {
+  "fname" : "soham",
+  "lname" : "lakhe",
+  "address" : "narkhed",
+  "city" : "katol",
+  "state" : "mh",
+  "zip" : 441222,
+  "phone" : 9988776655
+}, {
+  "fname" : "swapnil",
+  "lname" : "kagane",
+  "address" : "karve",
+  "city" : "nashik",
+  "state" : "mh",
+  "zip" : 441322,
+  "phone" : 8877665544
+}, {
+  "fname" : "raj",
+  "lname" : "khan",
+  "address" : "pune",
+  "city" : "pune ",
+  "state" : "mh",
+  "zip" : 123456,
+  "phone" : 7766554433
+}, {
+  "fname" : "Ankit",
+  "lname" : "Rajput",
+  "address" : "Dhule",
+  "city" : "Dhule",
+  "state" : "mh",
+  "zip" : 142536,
+  "phone" : 9874561230
+}, {
+  "fname" : "Akash",
+  "lname" : "nagpur",
+  "address" : "amravati",
+  "city" : "nhd",
+  "state" : "dfse",
+  "zip" : 34,
+  "phone" : 32163
+} ]

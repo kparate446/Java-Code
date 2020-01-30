@@ -69,9 +69,9 @@ public class AddressBook {
 					List<PersonDetails> read5 = ps.readFile(); //reading json file
 					List<PersonDetails> list5 = operation.sortzip(read5); //method to sort the last name
 //					ps.writeFile(list4); //writing data in json file
-					System.out.println("sorted last name");
+					System.out.println("sorted zip");
 					for(PersonDetails pd : list5) {
-						System.out.println("first name: "+ pd.getFname()+", lastname:"+pd.getLname()+", Zip" +pd.getZip());
+						System.out.println("first name: "+ pd.getFname()+", lastname:"+pd.getLname()+", Zip:" +pd.getZip());
 					}
 					break;
 				
@@ -79,7 +79,7 @@ public class AddressBook {
 					List<PersonDetails> read6 = ps.readFile(); //reading json file
 					List<PersonDetails> list6 = operation.sortAddress(read6); //method to sort the Address
 //					ps.writeFile(list4); //writing data in json file
-					System.out.println("sorted last name");
+					System.out.println("sorted address ");
 					for(PersonDetails pd : list6) {
 						System.out.println("first name: "+ pd.getFname()+", lastname:"+pd.getLname()+", Address:" +pd.getAddress());
 					}

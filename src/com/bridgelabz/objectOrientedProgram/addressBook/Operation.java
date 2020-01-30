@@ -50,7 +50,7 @@ public class Operation {
 
 		System.out.println("Enter name of person to remove: ");
 		String nameOfPerson=Utility.stringInput();
-		nameOfPerson = Utility.stringInput();
+//		nameOfPerson = Utility.stringInput();
 		for (int i = 0; i < list.size(); i++) {
 			if (list.get(i).getFname().equalsIgnoreCase(nameOfPerson)) { //matching user input in list
 
@@ -61,7 +61,7 @@ public class Operation {
 		}
 		return list;
 	}
-	//
+	/*
 	public  List<PersonDetails> DeletePerson(List<PersonDetails> list, String name) {
 		boolean find = false;
 		do {
@@ -81,7 +81,7 @@ public class Operation {
 
 		//		return list;
 
-	}
+	}*/
 
 	/** Edit User
 	 * @throws IOException */
@@ -96,7 +96,8 @@ public class Operation {
 		for(int i=0;i<list.size();i++) {
 			if(list.get(i).getFname().equals(firstName)) {
 				PersonDetails temp = list.get(i);
-				DeletePerson(list, firstName);
+//				DeletePerson(list, firstName);
+				removePerson(list);
 				do {
 					//perfoming editing operation
 					System.out.println("1.last name\n2.address\n3.city\n4.state\n5.zip\n6.phone");
@@ -130,13 +131,13 @@ public class Operation {
 							break;
 
 						case 5:
-							System.out.println("Enter the last name");
+							System.out.println("Enter the Zip");
 							temp.setZip(Utility.longInput());
 							System.out.println("Details Save Successfully");
 							break;
 
 						case 6:
-							System.out.println("Enter the last name");
+							System.out.println("Enter the phone");
 							temp.setPhone(Utility.longInput());
 							System.out.println("Details Save Successfully");
 							break;
@@ -151,8 +152,8 @@ public class Operation {
 						System.out.println("Enter the Valid Number");
 						sc.hasNext();
 					}
-				}while(num!=0);
-				do {
+//				}while(num!=0);
+//				do {
 					//Save and Save As the details
 					System.out.println("1.Save\n2.Save As");
 					try {

@@ -32,6 +32,4 @@ public class Properties {
 	public String toString() {
 		return "Properties [name=" + name + ", weight=" + weight + ", price=" + price + "]";
 	}
-	
-	
 }

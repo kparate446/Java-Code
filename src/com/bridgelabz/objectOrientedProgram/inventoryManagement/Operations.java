@@ -1,20 +1,17 @@
-/** 
- * Cereated By:- Krunal Parate
- * Date :-
- */
-package com.bridgelabz.Inventory;
+package com.bridgelabz.objectOrientedProgram.inventoryManagement;
 
 import java.util.InputMismatchException;
 import java.util.List;
 
+import com.bridgelabz.Inventory.Properties;
 import com.bridgelabz.stock.StockDetails;
 
 public class Operations {
 	Utility Utility =new Utility();
 	
 	/**Add Inventory*/
-	public List<Properties> addInventory(List<Properties> list) { //method to add new inventory
-		Properties properties = new Properties();
+	public List<InventoryDetails> addInventory(List<InventoryDetails> list) { //method to add new inventory
+		InventoryDetails properties = new InventoryDetails();
 		try {
 			//taking data from user
 			System.out.println("Enter name of inventory: ");
@@ -33,19 +30,18 @@ public class Operations {
 			addInventory(list);
 		return list;	//returning list of inventory data
 	}
-	
 	/**Remove Inventory*/
-	public List<Properties> removeInventory(List<Properties> list) {	//method to remove inventory data
-		for (int i = 0; i < list.size(); i++) {
-			System.out.println(list.get(i).getName()); //showing available inventories
+	public List<Properties> removeInventory(List<Properties> read2) {	//method to remove inventory data
+		for (int i = 0; i < read2.size(); i++) {
+			System.out.println(read2.get(i).getName()); //showing available inventories
 		}
 		boolean find = false;
 		System.out.println("Enter name of Inventory to be removed: ");
 		try {
 			String name = Utility.stringInput(); 
-			for (int i = 0; i < list.size(); i++) {
-				if (list.get(i).getName().equalsIgnoreCase(name)) { //matching user input with inventory list
-					list.remove(i);	//removing found data
+			for (int i = 0; i < read2.size(); i++) {
+				if (read2.get(i).getName().equalsIgnoreCase(name)) { //matching user input with inventory list
+					read2.remove(i);	//removing found data
 					find = true;
 					System.out.println("Inventory removed!!");
 					break;
@@ -59,13 +55,13 @@ public class Operations {
 		System.out.println("To remove more press 1\nTo exit press 0 ");
 		int a = Utility.integerInput();
 		if (a == 1)
-			removeInventory(list);
-		return list;	//returning list of remaining inventories
+			removeInventory(read2);
+		return read2;	//returning list of remaining inventories
 
 	}
 	
 	/** Calculation*/
-	public void calculations(List<Properties> list) {	//method to calculate price of inventory
+	public void calculations(List<InventoryDetails> list) {	//method to calculate price of inventory
 		for (int i = 0; i < list.size(); i++) {
 			System.out.println(list.get(i).getName()); //showing all inventories
 		}
@@ -91,7 +87,7 @@ public class Operations {
 	}
 	
 	/**Total Calculation*/
-	public List<Properties> Totalcalculation(List<Properties> list) {
+	public List<InventoryDetails> Totalcalculation(List<InventoryDetails> list) {
 		float temp=0;
 		for (int i = 0; i < list.size(); i++) {
 

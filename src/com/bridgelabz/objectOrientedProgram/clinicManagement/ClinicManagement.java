@@ -23,22 +23,22 @@ public class ClinicManagement {
 				System.out.println("Doctor Details");
 				for(DoctorDetails dd : list1) {			
 					System.out.println("Doctor Name: "+dd.getDoctorName()+", Doctor Id: "+dd.getDoctorId()+", Specialization: "+dd.getSpecialization()+", Availibility: "+dd.getAvailability()+", Appoinment: "+dd.getAppoinment());
-					System.out.println();
 				}
+				System.out.println();
 				
 		//Show the Patient Details
 		System.out.println("Patient Details");
 		for(PatientDetails pd : list) {			
 			System.out.println("Patient Name: "+pd.getPatientName()+", Patient Id: "+pd.getPatientId()+", Mobile No: "+pd.getMobileNumber()+", Age: "+pd.getAge());
-			System.out.println();
 		}
+		System.out.println();
 		
 		//Show the Appoinment Appoinment
 		System.out.println("Appoinment Appoinment");
 		for(AppoinmentDetails ad : list2) {			
 			System.out.println("Doctor Name: "+ad.getDoctorName()+", Patient Id: "+ad.getPatientId()+", Patient Name: "+ad.getPatientName()+", Doctor Specialization: "+ad.getDoctorSpecialization()+", Doctor Avaibility: "+ad.getDoctorAvaibility()+" , Doctor Appoinment: "+ad.getDoctorAppointment());
-			System.out.println();
 		}
+		System.out.println();
 		
 		do {
 			//performing different operations by users choice
@@ -58,11 +58,18 @@ public class ClinicManagement {
 					List<PatientDetails> read4 = patientDetails.readFile(); //reading json file
 					List<PatientDetails> list4 =operation.addPatient(read4); //method to add the patient
 					patientDetails.writeFile(list4); //writing data in json file
+					break;
 				// Add Appointment
 				case 3:
 					List<AppoinmentDetails> read5 = appoinmentDetails.readFile(); //reading json file
 					List<AppoinmentDetails> list5 =operation.addAppoinment(read5); //method to add the Appointment
 					appoinmentDetails.writeFile(list5); //writing data in json file
+					break;
+				case 6:
+					List<PatientDetails> read6 = patientDetails.readFile(); //reading json file
+					List<PatientDetails> list6 = operation.removePatient(read6); //method to remove stock
+					patientDetails.writeFile(list6);	//writing data in json file
+					break;
 				case 4:
 					Operation.Display();
 					break;

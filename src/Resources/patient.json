@@ -1,7 +1,7 @@
-[{
-  "patientName" : "Krunal" ,
-  "patientId" : 1 ,
-  "mobileNumber" : 9860403086 ,
+[ {
+  "patientName" : "Krunal",
+  "patientId" : 1,
+  "mobileNumber" : 9860403086,
   "age" : 22,
   "assignDoctor" : null
-}]
+} ]

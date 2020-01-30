@@ -3,6 +3,9 @@ package com.bridgelabz.objectOrientedProgram.clinicManagement;
 import java.io.IOException;
 import java.util.List;
 
+import com.bridgelabz.stock.StockDetails;
+import com.bridgelabz.stock.Utility;
+
 
 public class Operation {
 	
@@ -94,23 +97,42 @@ public class Operation {
 				System.out.println("Doctor Details");
 				for(DoctorDetails dd : list1) {			
 					System.out.println("Doctor Name: "+dd.getDoctorName()+", Doctor Id: "+dd.getDoctorId()+", Specialization: "+dd.getSpecialization()+", Availibility: "+dd.getAvailability()+", Appoinment: "+dd.getAppoinment());
-					System.out.println();
 				}
+				System.out.println();
 				
 		//Show the Patient Details
 		System.out.println("Patient Details");
 		for(PatientDetails pd : list) {			
 			System.out.println("Patient Name: "+pd.getPatientName()+", Patient Id: "+pd.getPatientId()+", Mobile No: "+pd.getMobileNumber()+", Age: "+pd.getAge());
-			System.out.println();
 		}
+		System.out.println();
 		
 		//Show the Appoinment Appoinment
 		System.out.println("Appoinment Appoinment");
 		for(AppoinmentDetails ad : list2) {			
 			System.out.println("Doctor Name: "+ad.getDoctorName()+", Patient Id: "+ad.getPatientId()+", Patient Name: "+ad.getPatientName()+", Doctor Specialization: "+ad.getDoctorSpecialization()+", Doctor Avaibility: "+ad.getDoctorAvaibility()+" , Doctor Appoinment: "+ad.getDoctorAppointment());
-			System.out.println();
+			
 		}
+		System.out.println();
 		return choice;
+	}
+	
+	// Delete patient Details
+	public List<PatientDetails>removePatient(List<PatientDetails> list) { //method to remove Patient from file
+		for (int i = 0; i < list.size(); i++) {
+			System.out.println(list.get(i).getPatientName()); //showing all data by name
+		}
+		System.out.println("Enter name of Patient to remove: ");
+		String nameOfStock = Utility.stringInput();
+		for (int i = 0; i < list.size(); i++) {
+			if (list.get(i).getPatientName().equalsIgnoreCase(nameOfStock)) { //matching user input in list
+
+				list.remove(i);
+				System.out.println("Patient Removed!");
+				break;
+			}
+		}
+		return list;
 	}
 	
 }

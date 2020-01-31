@@ -15,7 +15,7 @@ public class DoctorDetails {
 	long doctorId;
 	String specialization;
 	String availability;
-	String appoinment;
+	long appoinment;
 	
 	public String getDoctorName() {
 		return doctorName;
@@ -41,10 +41,10 @@ public class DoctorDetails {
 	public void setAvailability(String availability) {
 		this.availability = availability;
 	}
-	public String getAppoinment() {
+	public long getAppoinment() {
 		return appoinment;
 	}
-	public void setAppoinment(String appoinment) {
+	public void setAppoinment(long appoinment) {
 		this.appoinment = appoinment;
 	}
 	@Override
@@ -67,6 +67,7 @@ public class DoctorDetails {
 	}
 	
 	// Write the file
+	@SuppressWarnings("deprecation")
 	public void writeFile(List<DoctorDetails> list) throws IOException {	//writing json file
 		mapper.defaultPrettyPrintingWriter().writeValue(file, list); // writing data in inventory json file
 	}

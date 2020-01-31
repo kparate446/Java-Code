@@ -1,7 +1,19 @@
-[{
-  "doctorName" : "Anil" ,
-  "doctorId" : "101" ,
-  "specialization" : "Migrane" ,
-  "availability" : "morning" ,
+[ {
+  "doctorName" : "Priyanka",
+  "doctorId" : 101,
+  "specialization" : "Family physician",
+  "availability" : "24hour",
+  "appoinment" : 0
+}, {
+  "doctorName" : "Swapnil",
+  "doctorId" : 102,
+  "specialization" : "BAMS",
+  "availability" : "Evening",
   "appoinment" : 1
-}]
+}, {
+  "doctorName" : "Manoj",
+  "doctorId" : 103,
+  "specialization" : "Migrane",
+  "availability" : "10-2 PM",
+  "appoinment" : 0
+} ]

@@ -1,8 +1,8 @@
-[{
-  "doctorName" : "Anil",
-  "patientId" : 1 ,
+[ {
+  "doctorName" : "Swapnil",
+  "patientId" : 3,
   "patientName" : "Krunal",
-  "doctorSpecialization" : "Migrane",
-  "doctorAvaibility" : "morning" ,
-  "doctorAppointment" : 3
-}]
+  "doctorSpecialization" : "BAMS",
+  "doctorAvaibility" : "Evening",
+  "doctorAppointment" : 1
+} ]

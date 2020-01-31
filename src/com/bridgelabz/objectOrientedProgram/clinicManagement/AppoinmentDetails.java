@@ -78,6 +78,7 @@ public class AppoinmentDetails {
 	}
 	
 	// Write the file
+	@SuppressWarnings("deprecation")
 	public void writeFile(List<AppoinmentDetails> list) throws IOException {	//writing json file
 		mapper.defaultPrettyPrintingWriter().writeValue(file, list); // writing data in inventory json file
 	}

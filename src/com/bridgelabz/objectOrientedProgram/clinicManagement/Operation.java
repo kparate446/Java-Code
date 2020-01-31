@@ -1,15 +1,17 @@
 package com.bridgelabz.objectOrientedProgram.clinicManagement;
 
 import java.io.IOException;
+import java.util.InputMismatchException;
 import java.util.List;
 
-import com.bridgelabz.stock.StockDetails;
 import com.bridgelabz.stock.Utility;
 
-
 public class Operation {
-	
+
 	PatientDetails details = new PatientDetails();
+	PatientDetails patientDetails = new PatientDetails();
+	DoctorDetails doctorDetails = new DoctorDetails();
+	AppoinmentDetails appoinmentDetails = new AppoinmentDetails();
 
 	/**Add Patient*/
 	public List<PatientDetails> addPatient(List<PatientDetails> list) { //method to add new Patient
@@ -30,10 +32,8 @@ public class Operation {
 		System.out.println("Details added successfully!");
 		return list; //returning list of data]
 	}
-	
-	/**Add Patient*/
-	DoctorDetails doctorDetails = new DoctorDetails();
-	
+
+	/**Add Doctor*/
 	public List<DoctorDetails> addDoctor(List<DoctorDetails> read1) { //method to add new Doctor
 		// Enter the data from User
 		System.out.println("Enter the Doctor Name: ");
@@ -43,7 +43,10 @@ public class Operation {
 		doctorDetails.setDoctorId(Utility.longInput());
 
 		System.out.println("Enter the Doctor Specialization: ");
-		doctorDetails.setSpecialization(Utility.stringInput());
+		String sp = Utility.stringInput();
+		sp=Utility.stringInput();
+		doctorDetails.setSpecialization(sp);
+		//		doctorDetails.setSpecialization(Utility.stringInput());
 
 		System.out.println("Enter the Availability");
 		doctorDetails.setAvailability(Utility.stringInput());
@@ -52,10 +55,8 @@ public class Operation {
 		System.out.println("Details added successfully!");
 		return read1; //returning list of data]
 	}
-	
+
 	/** Add Appoinment*/
-	AppoinmentDetails appoinmentDetails = new AppoinmentDetails();
-	
 	public List<AppoinmentDetails> addAppoinment(List<AppoinmentDetails> list) { //method to add new Appoinment
 		// Enter the data from User
 		System.out.println("Enter the Doctor Name: ");
@@ -63,7 +64,7 @@ public class Operation {
 
 		System.out.println("Enter the Patient Id: ");
 		appoinmentDetails.setPatientId(Utility.longInput());
-		
+
 		System.out.println("Enter the Patient Name: ");
 		appoinmentDetails.setPatientName(Utility.stringInput());
 
@@ -72,60 +73,97 @@ public class Operation {
 
 		System.out.println("Enter the Doctor Availability");
 		appoinmentDetails.setDoctorAvaibility(Utility.stringInput());
-		
+
 		System.out.println("Enter the Doctor Appoinment: ");
 		appoinmentDetails.setDoctorAppointment(Utility.longInput());
-		
+
 		list.add(appoinmentDetails); //adding data to list
 		System.out.println("Details added successfully!");
 		return list; //returning list of data]
 	}
-	
-	/** Display the All Deatils*/
+
+	/** Display the All Details*/
 	public static int Display() throws IOException {
-		
+
 		PatientDetails patientDetails = new PatientDetails();
 		DoctorDetails doctorDetails = new DoctorDetails();
 		AppoinmentDetails appoinmentDetails = new AppoinmentDetails();
-		Operation operation = new Operation();
 		int choice = 0;
 		List<PatientDetails> list = patientDetails.readFile(); //reading json file
 		List<DoctorDetails> list1 = doctorDetails.readFile(); //reading json file
 		List<AppoinmentDetails> list2 = appoinmentDetails.readFile(); //reading json file
-		
+
 		//Show the Doctor Details
-				System.out.println("Doctor Details");
-				for(DoctorDetails dd : list1) {			
-					System.out.println("Doctor Name: "+dd.getDoctorName()+", Doctor Id: "+dd.getDoctorId()+", Specialization: "+dd.getSpecialization()+", Availibility: "+dd.getAvailability()+", Appoinment: "+dd.getAppoinment());
-				}
-				System.out.println();
-				
+		System.out.println("Doctor Details");
+		for(DoctorDetails dd : list1) {			
+			System.out.println("Doctor Name: "+dd.getDoctorName()+", Doctor Id: "+dd.getDoctorId()+", Specialization: "+dd.getSpecialization()+", Availibility: "+dd.getAvailability()+", Appoinment: "+dd.getAppoinment());
+		}
+		System.out.println();
+
 		//Show the Patient Details
 		System.out.println("Patient Details");
 		for(PatientDetails pd : list) {			
 			System.out.println("Patient Name: "+pd.getPatientName()+", Patient Id: "+pd.getPatientId()+", Mobile No: "+pd.getMobileNumber()+", Age: "+pd.getAge());
 		}
 		System.out.println();
-		
+
 		//Show the Appoinment Appoinment
 		System.out.println("Appoinment Appoinment");
 		for(AppoinmentDetails ad : list2) {			
 			System.out.println("Doctor Name: "+ad.getDoctorName()+", Patient Id: "+ad.getPatientId()+", Patient Name: "+ad.getPatientName()+", Doctor Specialization: "+ad.getDoctorSpecialization()+", Doctor Avaibility: "+ad.getDoctorAvaibility()+" , Doctor Appoinment: "+ad.getDoctorAppointment());
-			
+
 		}
 		System.out.println();
 		return choice;
 	}
-	
-	// Delete patient Details
+
+
+	/** Doctor details*/
+	public List<DoctorDetails> getDoctorDetails(List<DoctorDetails> docList) throws IOException {
+		List<DoctorDetails> list1 = doctorDetails.readFile(); //reading json file
+		System.out.println("Doctor Details");
+		for(DoctorDetails dd : list1) {		
+			System.out.println("Doctor Name: "+dd.getDoctorName()+", Doctor Id: "+dd.getDoctorId()+", Specialization: "+dd.getSpecialization()+", Availibility: "+dd.getAvailability()+", Appoinment: "+dd.getAppoinment());
+		}
+		System.out.println();
+		return list1;
+
+	}
+
+	/** Patient Details*/
+	public List<PatientDetails> getPatientDetails(List<PatientDetails> docList) throws IOException {
+		List<PatientDetails> list = patientDetails.readFile(); //reading json file
+		System.out.println("Patient Details");
+		for(PatientDetails pd : list) {			
+			System.out.println("Patient Name: "+pd.getPatientName()+", Patient Id: "+pd.getPatientId()+", Mobile No: "+pd.getMobileNumber()+", Age: "+pd.getAge());
+		}
+		System.out.println();
+		return list;
+
+	}
+
+	/** Appoinment Details*/
+	public List<AppoinmentDetails> getAppoinmentDetails(List<AppoinmentDetails> docList) throws IOException {
+		List<AppoinmentDetails> list2 = appoinmentDetails.readFile(); //reading json file
+		System.out.println("Appoinment Appoinment");
+		for(AppoinmentDetails ad : list2) {			
+			System.out.println("Doctor Name: "+ad.getDoctorName()+", Patient Id: "+ad.getPatientId()+", Patient Name: "+ad.getPatientName()+", Doctor Specialization: "+ad.getDoctorSpecialization()+", Doctor Avaibility: "+ad.getDoctorAvaibility()+" , Doctor Appoinment: "+ad.getDoctorAppointment());
+
+		}
+		System.out.println();
+		return list2;
+
+	}
+
+	/** Delete patient Details*/
 	public List<PatientDetails>removePatient(List<PatientDetails> list) { //method to remove Patient from file
 		for (int i = 0; i < list.size(); i++) {
 			System.out.println(list.get(i).getPatientName()); //showing all data by name
 		}
 		System.out.println("Enter name of Patient to remove: ");
-		String nameOfStock = Utility.stringInput();
+		String nameOfPatient = Utility.stringInput();
 		for (int i = 0; i < list.size(); i++) {
-			if (list.get(i).getPatientName().equalsIgnoreCase(nameOfStock)) { //matching user input in list
+			if (list.get(i).getPatientName().equalsIgnoreCase(nameOfPatient)) { //matching user input in list
 
 				list.remove(i);
 				System.out.println("Patient Removed!");
@@ -134,5 +172,146 @@ public class Operation {
 		}
 		return list;
 	}
-	
+
+	/** Remove Appoinment*/ 
+	public List<AppoinmentDetails>removeAppoinment(List<AppoinmentDetails> list) { //method to remove Patient from file
+		for (int i = 0; i < list.size(); i++) {
+			System.out.println(list.get(i).getPatientName()); //showing all data by name
+		}
+		System.out.println("Enter name of Patient to remove: ");
+		String nameOfPatient = Utility.stringInput();
+		for (int i = 0; i < list.size(); i++) {
+			if (list.get(i).getPatientName().equalsIgnoreCase(nameOfPatient)) { //matching user input in list
+
+				list.remove(i);
+				System.out.println("Appoinment Removed!");
+				break;
+			}
+		}
+		return list;
+	}
+	/** Remove Doctor*/
+	public List<DoctorDetails>removeDoctor(List<DoctorDetails> List) { //method to remove Patient from file
+		for (int i = 0; i < List.size(); i++) {
+			System.out.println(List.get(i).getDoctorName()); //showing all data by name
+		}
+		System.out.println("Enter name of Doctor to remove: ");
+		String nameOfDoctor = Utility.stringInput();
+		for (int i = 0; i < List.size(); i++) {
+			if (List.get(i).getDoctorName().equalsIgnoreCase(nameOfDoctor)) { //matching user input in list
+
+				List.remove(i);
+				System.out.println("Doctor Removed!");
+				break;
+			}
+		}
+		return List;
+
+	}
+
+
+	/** Appoinment*/
+	public List<AppoinmentDetails> takeAppoinment(List<AppoinmentDetails> appoinList,List<DoctorDetails> docList, List<PatientDetails> patList) throws IOException{
+
+		try {
+			System.out.println("Available Doctors are: ");
+			getDoctorDetails(docList); // Doctor Details List
+			System.out.println("choose available doctor");
+			String docName = Utility.stringInput();// Enter the Doctor name
+			for(int i=0 ;i< docList.size();i++) {
+				if(docList.get(i).getDoctorName().equalsIgnoreCase(docName)) { //Compair Doctor Name Same or Not
+					if(docList.get(i).getAppoinment() <=5) {
+						//Asking the patient details
+						System.out.println("Enter name of patient");
+						String patientName = Utility.stringInput();
+						patientDetails.setPatientName(patientName); // Set the Patient name in Patient Details
+						appoinmentDetails.setPatientName(patientName); // Set the Patient Name in Appoinmen Details
+						patientDetails.setAssignDoctor(docName);//Assign the Doctor in Patient Details
+						System.out.println("Enter the Mobile Number of Patient");
+						patientDetails.setMobileNumber(Utility.longInput()); // Set the Mobile Number Patient Details
+						System.out.println("Enter the age of Patient");
+						patientDetails.setAge(Utility.integerInput()); // Set the Age in Patient Details
+						patientDetails.setPatientId(patList.size() +1); //old id +1
+						long appoinment = docList.get(i).getAppoinment();// getting the Appoinment in Appoinment List
+						appoinment = appoinment +1;//increasing doctor Appoinment
+						//Setting data to doctor to patient
+						docList.get(i).setAppoinment(appoinment); // Set the Doctor Appoinment
+						// Set the data data in appoinment Details
+						appoinmentDetails.setDoctorAppointment(appoinment);
+						appoinmentDetails.setPatientId(patList.size() + 1);
+						appoinmentDetails.setDoctorName(docName);
+						appoinmentDetails.setDoctorSpecialization(docList.get(i).getSpecialization());
+						appoinmentDetails.setDoctorAvaibility(docList.get(i).getSpecialization());
+						appoinmentDetails.setDoctorAvaibility(docList.get(i).getAvailability());
+						System.out.println("Appoinment Booked: ");
+						break;
+					}
+					else {
+						System.out.println("Appointment Full \n please take tomorrows Appointment");
+						System.out.println("Enter name of patient");
+						String patientName = Utility.stringInput();
+						patientDetails.setPatientName(patientName);
+						appoinmentDetails.setPatientName(patientName);
+						patientDetails.setAssignDoctor(docName);
+						System.out.println("Enter the Mobile Number of Patient");
+						patientDetails.setMobileNumber(Utility.longInput());
+						System.out.println("Enter the age of Patient");
+						patientDetails.setAge(Utility.integerInput());
+						patientDetails.setPatientId(patList.size() +1);
+						long appoinment = docList.get(i).getAppoinment();
+						appoinment = appoinment +1;//increasing doctor Appoinment
+						//Setting data to doctor to patient
+						docList.get(i).setAppoinment(appoinment);
+						appoinmentDetails.setDoctorAppointment(appoinment);
+						appoinmentDetails.setPatientId(patList.size() + 1);
+						appoinmentDetails.setDoctorName(docName);
+						appoinmentDetails.setDoctorSpecialization(docList.get(i).getSpecialization());
+						appoinmentDetails.setDoctorAvaibility(docList.get(i).getSpecialization());
+						appoinmentDetails.setDoctorAvaibility(docList.get(i).getAvailability());
+						System.out.println("Appoinment Booked: ");
+					}
+				}
+			}
+			patList.add(patientDetails);
+			appoinList.add(appoinmentDetails);
+			doctorDetails.writeFile(docList);
+			patientDetails.writeFile(patList);
+		}catch (InputMismatchException e) {
+			System.out.println("Enter valid Input");
+		}
+		return appoinList;
+	}
+
+	/**Search  Doctor*/
+	public List<DoctorDetails> searchDoctor(List<DoctorDetails> docList) {
+		for(int i=0 ;i<docList.size();i++) {
+			System.out.println(docList.get(i).getDoctorName());
+		}
+		System.out.println("Enter the Doctor Name");
+		String docName = Utility.stringInput();
+		for(int i=0 ;i<docList.size();i++) {
+			if(docList.get(i).getDoctorName().equalsIgnoreCase(docName)) {
+				//Display details perticular doctor
+				System.out.println("Doctor Name:-"+docList.get(i).getDoctorName()+", Doctor Id:-"+docList.get(i).getDoctorId()+", Specialization:-"+docList.get(i).getSpecialization()+", Availibility:-"+docList.get(i).getAvailability()+", Appoinment:-"+docList.get(i).getAppoinment());
+				break;
+			}
+		}
+		return docList;
+	}
+	/** Search Patient*/
+	public List<PatientDetails> searchPatient(List<PatientDetails> patList) {
+		for(int i=0 ;i<patList.size();i++) {
+			System.out.println(patList.get(i).getPatientName());
+		}
+		System.out.println("Enter the Patient Name");
+		String patientName = Utility.stringInput();
+		for(int i=0 ;i<patList.size();i++) {
+			if(patList.get(i).getPatientName().equalsIgnoreCase(patientName)) {
+				//Display details perticular Patient
+				System.out.println("Patient Name:-"+patList.get(i).getPatientName()+", Patient Id:-"+patList.get(i).getPatientId()+", Mobile No.:-"+patList.get(i).getMobileNumber()+", Age:-"+patList.get(i).getAge()+", AssignDoctor:-"+patList.get(i).getAssignDoctor());
+				break;
+			}
+		}
+		return patList;
+	}
 }

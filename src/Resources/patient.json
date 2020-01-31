@@ -1,7 +1,13 @@
 [ {
+  "patientName" : "Soham",
+  "patientId" : 2,
+  "mobileNumber" : 9860301023,
+  "age" : 12,
+  "assignDoctor" : "Swapnil"
+}, {
   "patientName" : "Krunal",
-  "patientId" : 1,
+  "patientId" : 3,
   "mobileNumber" : 9860403086,
   "age" : 22,
-  "assignDoctor" : null
+  "assignDoctor" : "Swapnil"
 } ]

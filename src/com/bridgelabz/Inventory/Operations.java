@@ -7,8 +7,6 @@ package com.bridgelabz.Inventory;
 import java.util.InputMismatchException;
 import java.util.List;
 
-import com.bridgelabz.stock.StockDetails;
-
 public class Operations {
 	Utility Utility =new Utility();
 	
@@ -18,11 +16,11 @@ public class Operations {
 		try {
 			//taking data from user
 			System.out.println("Enter name of inventory: ");
-			properties.setName(Utility.stringInput());
+			properties.setName(com.bridgelabz.Inventory.Utility.stringInput());
 			System.out.println("Enter weight of inventory: ");
 			properties.setWeight(Utility.integerInput());
 			System.out.println("Enter price of inventory: ");
-			properties.setPrice(Utility.floatInput());
+			properties.setPrice(com.bridgelabz.Inventory.Utility.floatInput());
 		} catch (InputMismatchException e) {
 			System.out.println("enter valid input!");
 		}

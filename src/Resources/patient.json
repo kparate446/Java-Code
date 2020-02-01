@@ -10,4 +10,10 @@
   "mobileNumber" : 9860403086,
   "age" : 22,
   "assignDoctor" : "Swapnil"
+}, {
+  "patientName" : "Ramesh",
+  "patientId" : 6,
+  "mobileNumber" : 989674361,
+  "age" : 26,
+  "assignDoctor" : null
 } ]

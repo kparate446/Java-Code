@@ -1,4 +1,8 @@
-package com.bridgelabz.objectOrientedProgram.inventoryManagement;
+/** 
+ * Cereated By:- Krunal Parate
+ * Date :-
+ */
+package com.bridgelabz.Inventory;
 
 import java.io.File;
 import java.io.IOException;
@@ -7,34 +11,8 @@ import java.util.List;
 import org.codehaus.jackson.map.ObjectMapper;
 import org.codehaus.jackson.type.TypeReference;
 
-import com.bridgelabz.Inventory.Properties;
+public class Controller {
 
-public class InventoryDetails {
-	String name;
-	long weight;
-	float price;
-	public String getName() {
-		return name;
-	}
-	public void setName(String name) {
-		this.name = name;
-	}
-	public long getWeight() {
-		return weight;
-	}
-	public void setWeight(long weight) {
-		this.weight = weight;
-	}
-	public float getPrice() {
-		return price;
-	}
-	public void setPrice(float price) {
-		this.price = price;
-	}
-	@Override
-	public String toString() {
-		return "Properties [name=" + name + ", weight=" + weight + ", price=" + price + "]";
-	}
 	Properties properties = new Properties();
 	static ObjectMapper mapper = new ObjectMapper(); // jackson mapper object to map data with json file
 	
@@ -52,4 +30,3 @@ public class InventoryDetails {
 		mapper.defaultPrettyPrintingWriter().writeValue(file, list); // writing data in inventory json file
 	}
 }
-

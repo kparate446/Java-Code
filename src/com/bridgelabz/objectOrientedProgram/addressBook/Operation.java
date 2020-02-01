@@ -35,8 +35,19 @@ public class Operation {
 
 		System.out.println("Enter the Phone Number");
 		pd.setPhone(Utility.longInput());
-
-		listOfPerson.add(pd);
+		int choice=0;
+		System.out.println("1.Submit \t 2.Exit");
+		choice = Utility.integerInput();
+		switch (choice) {
+		case 1:
+			listOfPerson.add(pd);
+			break;
+		case 2:
+			return listOfPerson ;
+		default:
+			break;
+		}
+//		listOfPerson.add(pd);
 		System.out.println("Person Added Successfully");
 		return listOfPerson;
 	}
@@ -56,6 +67,20 @@ public class Operation {
 
 				list.remove(i);
 				System.out.println("Remove Person Details!");
+				break;
+			}
+		}
+		return list;
+	}
+	
+	//Remove Of Person In Edit Function
+	public List<PersonDetails> removePerson1(List<PersonDetails> list, String name) { //method to remove stock from file
+
+		for (int i = 0; i < list.size(); i++) {
+			if (list.get(i).getFname().equalsIgnoreCase(name)) { //matching user input in list
+
+				list.remove(i);
+
 				break;
 			}
 		}
@@ -97,7 +122,7 @@ public class Operation {
 			if(list.get(i).getFname().equals(firstName)) {
 				PersonDetails temp = list.get(i);
 //				DeletePerson(list, firstName);
-				removePerson(list);
+				removePerson1(list,firstName);
 				do {
 					//perfoming editing operation
 					System.out.println("1.last name\n2.address\n3.city\n4.state\n5.zip\n6.phone");
@@ -160,7 +185,21 @@ public class Operation {
 						save = Utility.integerInput();
 						switch(save) {
 						case 1:
-							list.add(temp);
+							int choice=0;
+							System.out.println("1.Submit \t 2.Exit");
+							choice = Utility.integerInput();
+							switch (choice) {
+							case 1:
+								list.add(temp);
+								break;
+								
+							case 2:
+								return list ;
+								
+							default:
+								break;
+							}
+//							list.add(temp);
 							break;
 						case 2:// if save as 
 							System.out.println("Enter the new name of file: ");
@@ -170,7 +209,23 @@ public class Operation {
 							File file = new File("path"+name+".json");
 							file.createNewFile();
 							FileWriter fw = new FileWriter(file);
-							list.add(temp);
+							
+							int choice1=0;
+							System.out.println("1.Submit \t 2.Exit");
+							choice1 = Utility.integerInput();
+							switch (choice1) {
+							case 1:
+								list.add(temp);
+								break;
+								
+							case 2:
+								return list ;
+								
+							default:
+								break;
+							}
+							
+//							list.add(temp);
 							for(PersonDetails pd : list) {
 								fw.write(pd.getFname()+"\n"+pd.getLname()+"\n"+pd.getAddress()+"\n"+pd.getCity()+"\n"+pd.getState()+"\n"+pd.getZip()+"\n"+pd.getPhone()+"\n");
 							}

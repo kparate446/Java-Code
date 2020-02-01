@@ -9,8 +9,8 @@ public class operations {
 	static String suit[] = { "Clubs", "Diamonds", "Hearts", "Spades" };
 	static String rank[] = { "2", "3", "4", "5", "6", "7", "8", "9", "10 ", "jack", "Queen", "King", "Ace" };
 	// take input from users no. of players and distribute cards
-	public static int players = 0;
-	public static int playcards = 0;
+	public static int players = 4;
+	public static int playcards = 9;
 	// total card are 52
 	final static int totalcards = 52;
 	// initialized desk with 52 cards

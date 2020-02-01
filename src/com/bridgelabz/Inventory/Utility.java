@@ -36,15 +36,7 @@ public class Utility {
 		return sc.nextFloat();
 	}
 	
-	public static String stringValidation(String string) {
-		Pattern pattern = Pattern.compile("^[a-zA-Z]*$");
-		if (!pattern.matcher(string).matches()) {
-			throw new InputMismatchException();
-
-		} else {
-			return string;
-		}
-	}
+	
 	
 	
 }

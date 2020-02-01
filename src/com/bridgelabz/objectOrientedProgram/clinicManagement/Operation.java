@@ -27,8 +27,20 @@ public class Operation {
 
 		System.out.println("Enter the Patient Age");
 		details.setAge(Utility.integerInput());
+		int choice=0;
+		System.out.println("1.Submit \t 2.Exit");
+		choice = Utility.integerInput();
+		switch (choice) {
+		case 1:
+			list.add(details);//adding data to list
+			break;
+		case 2:
+			return list ;
+		default:
+			break;
+		}
 
-		list.add(details); //adding data to list
+//		list.add(details); //adding data to list
 		System.out.println("Details added successfully!");
 		return list; //returning list of data]
 	}
@@ -50,8 +62,21 @@ public class Operation {
 
 		System.out.println("Enter the Availability");
 		doctorDetails.setAvailability(Utility.stringInput());
-
-		read1.add(doctorDetails); //adding data to list
+		
+		int choice=0;
+		System.out.println("1.Submit \t 2.Exit");
+		choice = Utility.integerInput();
+		switch (choice) {
+		case 1:
+			read1.add(doctorDetails);//adding data to list
+			break;
+		case 2:
+			return read1 ;
+		default:
+			break;
+		}
+		
+//		read1.add(doctorDetails); //adding data to list
 		System.out.println("Details added successfully!");
 		return read1; //returning list of data]
 	}
@@ -76,8 +101,21 @@ public class Operation {
 
 		System.out.println("Enter the Doctor Appoinment: ");
 		appoinmentDetails.setDoctorAppointment(Utility.longInput());
+		
+		int choice=0;
+		System.out.println("1.Submit \t 2.Exit");
+		choice = Utility.integerInput();
+		switch (choice) {
+		case 1:
+			list.add(appoinmentDetails);//adding data to list
+			break;
+		case 2:
+			return list ;
+		default:
+			break;
+		}
 
-		list.add(appoinmentDetails); //adding data to list
+//		list.add(appoinmentDetails); //adding data to list
 		System.out.println("Details added successfully!");
 		return list; //returning list of data]
 	}
@@ -272,8 +310,22 @@ public class Operation {
 					}
 				}
 			}
-			patList.add(patientDetails);
-			appoinList.add(appoinmentDetails);
+			
+			int choice=0;
+			System.out.println("1.Submit \t 2.Exit");
+			choice = Utility.integerInput();
+			switch (choice) {
+			case 1:
+				patList.add(patientDetails);
+				appoinList.add(appoinmentDetails);
+				break;
+			case 2:
+				return appoinList ;
+			default:
+				break;
+			}
+//			patList.add(patientDetails);
+//			appoinList.add(appoinmentDetails);
 			doctorDetails.writeFile(docList);
 			patientDetails.writeFile(patList);
 		}catch (InputMismatchException e) {

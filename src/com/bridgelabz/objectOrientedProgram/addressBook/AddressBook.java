@@ -27,7 +27,7 @@ public class AddressBook {
 		}
 		do {
 //			System.out.println();
-			System.out.println("1.Add Person Details \n2.Delete Person \n3.Show All Details \n4.Sort the Last Name \n5.Sort Zip \n6.Sort Address \n7.Edit Person \n8.Exit" );
+			System.out.println("1.Add Person Details \n2.Delete Person \n3.Show All Details \n4.Sort by Last Name \n5.Sort by Zip \n6.Sort by Address \n7.Edit Person \n8.Exit" );
 
 			try {
 				choice = sc.nextInt();

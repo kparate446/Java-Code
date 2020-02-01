@@ -1,0 +1,24 @@
+[
+   "Rice":{
+      "type":"rice",
+      "Name":"Basmati",
+      "Price": "Rs-40",
+      "weight": "50kg",
+      "Total" : 2000
+   
+},
+   "Pulse":{
+      "type":"pulse",
+      "Name":"Toor",
+      "weight":"10kg",
+      "Price":"Rs-50"
+   		"Total" : 500
+},
+   "Wheats":{
+      "type":"Wheats",
+      "Name":"CommonWheat",
+      "weight":"100kg",
+      "Price":"Rs-30"
+   		"Total" : 3000
+}
+]

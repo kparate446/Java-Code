@@ -3,7 +3,7 @@
  * Date :-
  */
 
-package com.bridgelabz.Inventory;
+package com.bridgelabz.objectOrientedProgram.Inventory;
 import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
@@ -37,6 +37,16 @@ public class Utility {
 	}
 	
 	
-	
+	// String Validation
+		public static String stringValidation(String inputString) {
+			String str=("^[a-zA-Z]*$");
+			Pattern pr = java.util.regex.Pattern.compile(str);
+			if(pr.matcher(inputString).matches()) {
+				return inputString;
+			}
+			else {
+				throw new InputMismatchException();
+			}
+		}
 	
 }

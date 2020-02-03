@@ -1,13 +1,15 @@
 package com.bridgelabz.objectOrientedProgram.deckOfCards;
 
-import java.security.SecureRandom;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 public class operations {
 	// different types of cards
-	static String suit[] = { "Clubs", "Diamonds", "Hearts", "Spades" };
-	static String rank[] = { "2", "3", "4", "5", "6", "7", "8", "9", "10 ", "jack", "Queen", "King", "Ace" };
+//	static String suit[] = { "Clubs", "Diamonds", "Hearts", "Spades" };
+	static String suit[] = { "♣","♦","♥","♠"};
+//	static String rank[] = { "2", "3", "4", "5", "6", "7", "8", "9", "10 ", "jack", "Queen", "King", "Ace" };
+	static String rank[] = {"A","2", "3", "4", "5","6", "7", "8", "9", "10", "J","Q", "K"};
 	// take input from users no. of players and distribute cards
 	public static int players = 4;
 	public static int playcards = 9;
@@ -61,7 +63,7 @@ public class operations {
 	public static int getRandomCard() {
 		int randomInt;
 		do {
-			SecureRandom rand = new SecureRandom();//random no.
+			Random rand = new Random();//random no.
 			randomInt = rand.nextInt(52); // number between 0-51
 		} while (check.contains(randomInt));
 		return randomInt;
@@ -70,8 +72,10 @@ public class operations {
 	// **display cards..
 	public static void showPlayersCard() {
 		for (int i = 0; i < playcards; i++) {
+			System.out.print("Card:"+(i+1)+"-->  ");
 			for (int j = 0; j < players; j++) {
 				if (allotcards[i][j] != null)
+//					System.out.print("Player"+i);
 					System.out.print(allotcards[i][j] + "  | ");
 			}
 			System.out.println();

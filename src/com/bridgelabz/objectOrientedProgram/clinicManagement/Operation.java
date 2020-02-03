@@ -17,7 +17,7 @@ public class Operation {
 	public List<PatientDetails> addPatient(List<PatientDetails> list) { //method to add new Patient
 		// Enter the data from User
 		System.out.println("Enter the Patient Name: ");
-		details.setPatientName(Utility.stringInput());
+		details.setPatientName(Utility.stringValidation(Utility.stringInput()));
 
 		System.out.println("Enter the Patient Id: ");
 		details.setPatientId(Utility.integerInput());
@@ -49,19 +49,19 @@ public class Operation {
 	public List<DoctorDetails> addDoctor(List<DoctorDetails> read1) { //method to add new Doctor
 		// Enter the data from User
 		System.out.println("Enter the Doctor Name: ");
-		doctorDetails.setDoctorName(Utility.stringInput());
+		doctorDetails.setDoctorName(Utility.stringValidation(Utility.stringInput()));
 
 		System.out.println("Enter the Doctor Id: ");
 		doctorDetails.setDoctorId(Utility.longInput());
 
 		System.out.println("Enter the Doctor Specialization: ");
-		String sp = Utility.stringInput();
-		sp=Utility.stringInput();
+		String sp = Utility.stringValidation(Utility.stringInput());
+		sp=Utility.stringValidation(Utility.stringInput());
 		doctorDetails.setSpecialization(sp);
 		//		doctorDetails.setSpecialization(Utility.stringInput());
 
 		System.out.println("Enter the Availability");
-		doctorDetails.setAvailability(Utility.stringInput());
+		doctorDetails.setAvailability(Utility.stringValidation(Utility.stringInput()));
 		
 		int choice=0;
 		System.out.println("1.Submit \t 2.Exit");
@@ -85,19 +85,19 @@ public class Operation {
 	public List<AppoinmentDetails> addAppoinment(List<AppoinmentDetails> list) { //method to add new Appoinment
 		// Enter the data from User
 		System.out.println("Enter the Doctor Name: ");
-		appoinmentDetails.setDoctorName(Utility.stringInput());
+		appoinmentDetails.setDoctorName(Utility.stringValidation(Utility.stringInput()));
 
 		System.out.println("Enter the Patient Id: ");
 		appoinmentDetails.setPatientId(Utility.longInput());
 
 		System.out.println("Enter the Patient Name: ");
-		appoinmentDetails.setPatientName(Utility.stringInput());
+		appoinmentDetails.setPatientName(Utility.stringValidation(Utility.stringInput()));
 
 		System.out.println("Enter the Doctor Specialization: ");
-		appoinmentDetails.setDoctorSpecialization(Utility.stringInput());
+		appoinmentDetails.setDoctorSpecialization(Utility.stringValidation(Utility.stringInput()));
 
 		System.out.println("Enter the Doctor Availability");
-		appoinmentDetails.setDoctorAvaibility(Utility.stringInput());
+		appoinmentDetails.setDoctorAvaibility(Utility.stringValidation(Utility.stringInput()));
 
 		System.out.println("Enter the Doctor Appoinment: ");
 		appoinmentDetails.setDoctorAppointment(Utility.longInput());
@@ -199,7 +199,7 @@ public class Operation {
 			System.out.println(list.get(i).getPatientName()); //showing all data by name
 		}
 		System.out.println("Enter name of Patient to remove: ");
-		String nameOfPatient = Utility.stringInput();
+		String nameOfPatient = Utility.stringValidation(Utility.stringInput());
 		for (int i = 0; i < list.size(); i++) {
 			if (list.get(i).getPatientName().equalsIgnoreCase(nameOfPatient)) { //matching user input in list
 
@@ -217,7 +217,7 @@ public class Operation {
 			System.out.println(list.get(i).getPatientName()); //showing all data by name
 		}
 		System.out.println("Enter name of Patient to remove: ");
-		String nameOfPatient = Utility.stringInput();
+		String nameOfPatient = Utility.stringValidation(Utility.stringInput());
 		for (int i = 0; i < list.size(); i++) {
 			if (list.get(i).getPatientName().equalsIgnoreCase(nameOfPatient)) { //matching user input in list
 
@@ -234,7 +234,7 @@ public class Operation {
 			System.out.println(List.get(i).getDoctorName()); //showing all data by name
 		}
 		System.out.println("Enter name of Doctor to remove: ");
-		String nameOfDoctor = Utility.stringInput();
+		String nameOfDoctor = Utility.stringValidation(Utility.stringInput());
 		for (int i = 0; i < List.size(); i++) {
 			if (List.get(i).getDoctorName().equalsIgnoreCase(nameOfDoctor)) { //matching user input in list
 
@@ -255,13 +255,13 @@ public class Operation {
 			System.out.println("Available Doctors are: ");
 			getDoctorDetails(docList); // Doctor Details List
 			System.out.println("choose available doctor");
-			String docName = Utility.stringInput();// Enter the Doctor name
+			String docName = Utility.stringValidation(Utility.stringInput());// Enter the Doctor name
 			for(int i=0 ;i< docList.size();i++) {
 				if(docList.get(i).getDoctorName().equalsIgnoreCase(docName)) { //Compair Doctor Name Same or Not
 					if(docList.get(i).getAppoinment() <=5) {
 						//Asking the patient details
 						System.out.println("Enter name of patient");
-						String patientName = Utility.stringInput();
+						String patientName = Utility.stringValidation(Utility.stringInput());
 						patientDetails.setPatientName(patientName); // Set the Patient name in Patient Details
 						appoinmentDetails.setPatientName(patientName); // Set the Patient Name in Appoinmen Details
 						patientDetails.setAssignDoctor(docName);//Assign the Doctor in Patient Details
@@ -287,7 +287,7 @@ public class Operation {
 					else {
 						System.out.println("Appointment Full \n please take tomorrows Appointment");
 						System.out.println("Enter name of patient");
-						String patientName = Utility.stringInput();
+						String patientName = Utility.stringValidation(Utility.stringInput());
 						patientDetails.setPatientName(patientName);
 						appoinmentDetails.setPatientName(patientName);
 						patientDetails.setAssignDoctor(docName);
@@ -340,7 +340,7 @@ public class Operation {
 			System.out.println(docList.get(i).getDoctorName());
 		}
 		System.out.println("Enter the Doctor Name");
-		String docName = Utility.stringInput();
+		String docName = Utility.stringValidation(Utility.stringInput());
 		for(int i=0 ;i<docList.size();i++) {
 			if(docList.get(i).getDoctorName().equalsIgnoreCase(docName)) {
 				//Display details perticular doctor
@@ -356,7 +356,7 @@ public class Operation {
 			System.out.println(patList.get(i).getPatientName());
 		}
 		System.out.println("Enter the Patient Name");
-		String patientName = Utility.stringInput();
+		String patientName = Utility.stringValidation(Utility.stringInput());
 		for(int i=0 ;i<patList.size();i++) {
 			if(patList.get(i).getPatientName().equalsIgnoreCase(patientName)) {
 				//Display details perticular Patient

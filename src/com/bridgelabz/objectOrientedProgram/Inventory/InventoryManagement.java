@@ -4,7 +4,7 @@
  * Purpose :- Inventory Management 
  */
 
-package com.bridgelabz.Inventory;
+package com.bridgelabz.objectOrientedProgram.Inventory;
 
 import java.io.IOException;
 import java.util.InputMismatchException;
@@ -16,6 +16,7 @@ public class InventoryManagement {
 	public static void main(String[] args) throws IOException {
 		Controller controller = new Controller();
 		Operations operations = new Operations();
+		@SuppressWarnings("resource")
 		Scanner sc = new Scanner(System.in);
 		int choice = 0;
 		System.out.println("Inventory");
@@ -29,12 +30,12 @@ public class InventoryManagement {
 			e1.printStackTrace();
 		} //reading json file in list
 		for (Properties pro : read) {
-			System.out.println(pro.getName() + " = " + pro.getWeight() * pro.getPrice());	//calculating the total prices of all inventories	
+			System.out.println(pro.getType()+"-"+pro.getName() + " = " + pro.getWeight() * pro.getPrice());	//calculating the total prices of all inventories	
 		}
 		System.out.println();
 		do {
 			System.out.println("Operations");
-			System.out.println("1.Add Inventory\n2.Remove Inventory\n3.Calculation of Inventory\n4.Total Inventory\n5.Exit ");
+			System.out.println("1.Add Inventory\n2.Remove Inventory\n3.Calculation of Inventory\n4.Total Inventory\n5.Add Type\n6.Remove Type \n7.Exit");
 			System.out.println("Enter your choice");
 			try {
 				choice = sc.nextInt();
@@ -48,7 +49,7 @@ public class InventoryManagement {
 
 							e.printStackTrace();
 						} // reading json file
-						List<Properties> list1 = operations.addInventory(read1); //to add inventory 
+						List<Properties> list1 = operations.addType(read1); //to add inventory 
 						controller.writeFile(list1); 
 						break;
 					case 2:
@@ -74,9 +75,21 @@ public class InventoryManagement {
 						break;
 
 					case 5:
+						List<Properties> read6 = controller.readFile(); // reading json file
+						List<Properties> list6 = operations.addInventory(read6); // to remove inventory
+						controller.writeFile(list6); 
+						break;
+
+					case 6:
+						List<Properties> read7 = controller.readFile(); // reading json file
+						List<Properties> list7 = operations.removeType(read7); // to remove inventory
+						controller.writeFile(list7); 
+						break;
+
+					case 7:
 						System.out.println("Thank you!");
 						return;
-						
+
 					default:
 						System.out.println("Invalid choice!");
 					}

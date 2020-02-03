@@ -11,23 +11,11 @@
   "weight" : 50,
   "price" : 20.0
 }, {
-  "name" : "Masur",
-  "weight" : 25,
-  "price" : 236.0
-}, {
   "name" : "Wheat",
   "weight" : 2,
   "price" : 10.0
 }, {
-  "name" : "Onion",
-  "weight" : 20,
-  "price" : 236.0
-}, {
-  "name" : "djgj",
-  "weight" : 10,
-  "price" : 320.0
-}, {
-  "name" : "orange",
-  "weight" : 20,
-  "price" : 100.0
+  "name" : null,
+  "weight" : 0,
+  "price" : 0.0
 } ]

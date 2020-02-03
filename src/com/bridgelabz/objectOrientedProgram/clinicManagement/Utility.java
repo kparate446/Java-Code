@@ -1,6 +1,8 @@
 package com.bridgelabz.objectOrientedProgram.clinicManagement;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
+import java.util.regex.Pattern;
 
 public class Utility {
 
@@ -49,5 +51,17 @@ public class Utility {
 
 	public static boolean booleanInput() {
 		return sc.nextBoolean();
+	}
+	
+	// String Validation
+	public static String stringValidation(String inputString) {
+		String str=("^[a-zA-Z]*$");
+		Pattern pr = java.util.regex.Pattern.compile(str);
+		if(pr.matcher(inputString).matches()) {
+			return inputString;
+		}
+		else {
+			throw new InputMismatchException();
+		}
 	}
 }

@@ -2,7 +2,7 @@
  * Created By:- Krunal Parate
  * Date :-
  */
-package com.bridgelabz.stock;
+package com.bridgelabz.objectOrientedProgram.stock;
 
 import java.io.File;
 import java.io.IOException;

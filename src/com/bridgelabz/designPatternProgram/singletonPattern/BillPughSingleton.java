@@ -12,7 +12,7 @@ public class BillPughSingleton {
 	 private BillPugh() {
 		 System.out.println("Instance Created");
 		 }
-	 private static class InnerClass{
+	 private static class InnerClass{ // Inner Class
 		 private static final BillPugh Instance = new BillPugh();
 	 }
 	 public static BillPugh getInstance() {

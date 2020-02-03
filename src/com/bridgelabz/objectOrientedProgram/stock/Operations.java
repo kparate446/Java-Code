@@ -3,7 +3,7 @@
  * Date :-
  */
 
-package com.bridgelabz.stock;
+package com.bridgelabz.objectOrientedProgram.stock;
 import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
@@ -19,10 +19,10 @@ public class Operations {
 	public List<StockDetails> addStock(List<StockDetails> list) { //method to add new stock
 		// Enter the data from User
 		System.out.println("Enter name of stock: ");
-		stockDetails.setShareName(Utility.stringInput());
+		stockDetails.setShareName(Utility.stringValidation(Utility.stringInput()));
 
 		System.out.println("Enter the Symbol");
-		stockDetails.setSymbol(Utility.stringInput());
+		stockDetails.setSymbol(Utility.stringValidation(Utility.stringInput()));
 
 		System.out.println("Enter number of stocks: ");
 		stockDetails.setNoOfShare(Utility.integerInput());
@@ -31,7 +31,7 @@ public class Operations {
 		stockDetails.setPrice(Utility.integerInput());
 
 		System.out.println("Enter the date");
-		String date = Utility.stringInput();
+		String date = Utility.stringValidation(Utility.stringInput());
 		stockDetails.setDate(Utility.stringInput());
 
 
@@ -57,7 +57,7 @@ public class Operations {
 		}
 
 		System.out.println("Enter name of stock to remove: ");
-		String nameOfStock = Utility.stringInput();
+		String nameOfStock = Utility.stringValidation(Utility.stringInput());
 		for (int i = 0; i < list.size(); i++) {
 			if (list.get(i).getShareName().equalsIgnoreCase(nameOfStock)) { //matching user input in list
 
@@ -75,7 +75,7 @@ public class Operations {
 			System.out.println(list.get(i).getShareName()); //showing all shares by name
 		}
 		System.out.println("Enter stock name you want to calculate total: ");
-		String stockName = Utility.stringInput();
+		String stockName = Utility.stringValidation(Utility.stringInput());
 		for (int i = 0; i < list.size(); i++) {
 			if (list.get(i).getShareName().equalsIgnoreCase(stockName)) { //Compair
 				float totalSharePrice = list.get(i).getPrice() * list.get(i).getNoOfShare(); //calculating total share price
@@ -103,7 +103,7 @@ public class Operations {
 			System.out.println(list.get(i).getShareName()); //showing all shares by name
 		}
 		System.out.println("Enter stock name you want to calculate total: ");
-		String stockName = Utility.stringInput();
+		String stockName = Utility.stringValidation(Utility.stringInput());
 		System.out.println("Add the Share");
 		float share=Utility.integerInput();
 		for (int i = 0; i < list.size(); i++) {
@@ -122,7 +122,7 @@ public class Operations {
 			System.out.println(list.get(i).getShareName()); //showing all shares by name
 		}
 		System.out.println("Enter stock name you want to calculate total: ");
-		String stockName = Utility.stringInput();
+		String stockName = Utility.stringValidation(Utility.stringInput());
 		System.out.println("Remove the Share");
 		float share=Utility.integerInput();
 		for (int i = 0; i < list.size(); i++) {

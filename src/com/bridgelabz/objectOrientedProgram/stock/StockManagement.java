@@ -5,7 +5,7 @@
  * 
  */
 
-package com.bridgelabz.stock;
+package com.bridgelabz.objectOrientedProgram.stock;
 import java.io.IOException;
 import java.util.InputMismatchException;
 import java.util.List;

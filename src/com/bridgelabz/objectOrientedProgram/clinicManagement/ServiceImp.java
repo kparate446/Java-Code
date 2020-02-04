@@ -6,7 +6,7 @@ import java.util.List;
 
 import com.bridgelabz.stock.Utility;
 
-public class Operation {
+public class ServiceImp implements Service {
 
 	PatientDetails details = new PatientDetails();
 	PatientDetails patientDetails = new PatientDetails();
@@ -14,6 +14,7 @@ public class Operation {
 	AppoinmentDetails appoinmentDetails = new AppoinmentDetails();
 
 	/**Add Patient*/
+	@Override
 	public List<PatientDetails> addPatient(List<PatientDetails> list) { //method to add new Patient
 		// Enter the data from User
 		System.out.println("Enter the Patient Name: ");
@@ -46,6 +47,7 @@ public class Operation {
 	}
 
 	/**Add Doctor*/
+	@Override
 	public List<DoctorDetails> addDoctor(List<DoctorDetails> read1) { //method to add new Doctor
 		// Enter the data from User
 		System.out.println("Enter the Doctor Name: ");
@@ -82,6 +84,7 @@ public class Operation {
 	}
 
 	/** Add Appoinment*/
+	@Override
 	public List<AppoinmentDetails> addAppoinment(List<AppoinmentDetails> list) { //method to add new Appoinment
 		// Enter the data from User
 		System.out.println("Enter the Doctor Name: ");
@@ -157,6 +160,7 @@ public class Operation {
 
 
 	/** Doctor details*/
+	@Override
 	public List<DoctorDetails> getDoctorDetails(List<DoctorDetails> docList) throws IOException {
 		List<DoctorDetails> list1 = doctorDetails.readFile(); //reading json file
 		System.out.println("Doctor Details");
@@ -169,6 +173,7 @@ public class Operation {
 	}
 
 	/** Patient Details*/
+	@Override
 	public List<PatientDetails> getPatientDetails(List<PatientDetails> docList) throws IOException {
 		List<PatientDetails> list = patientDetails.readFile(); //reading json file
 		System.out.println("Patient Details");
@@ -181,6 +186,7 @@ public class Operation {
 	}
 
 	/** Appoinment Details*/
+	@Override
 	public List<AppoinmentDetails> getAppoinmentDetails(List<AppoinmentDetails> docList) throws IOException {
 		List<AppoinmentDetails> list2 = appoinmentDetails.readFile(); //reading json file
 		System.out.println("Appoinment Appoinment");
@@ -194,6 +200,7 @@ public class Operation {
 	}
 
 	/** Delete patient Details*/
+	@Override
 	public List<PatientDetails>removePatient(List<PatientDetails> list) { //method to remove Patient from file
 		for (int i = 0; i < list.size(); i++) {
 			System.out.println(list.get(i).getPatientName()); //showing all data by name
@@ -212,6 +219,7 @@ public class Operation {
 	}
 
 	/** Remove Appoinment*/ 
+	@Override
 	public List<AppoinmentDetails>removeAppoinment(List<AppoinmentDetails> list) { //method to remove Patient from file
 		for (int i = 0; i < list.size(); i++) {
 			System.out.println(list.get(i).getPatientName()); //showing all data by name
@@ -229,6 +237,7 @@ public class Operation {
 		return list;
 	}
 	/** Remove Doctor*/
+	@Override
 	public List<DoctorDetails>removeDoctor(List<DoctorDetails> List) { //method to remove Patient from file
 		for (int i = 0; i < List.size(); i++) {
 			System.out.println(List.get(i).getDoctorName()); //showing all data by name
@@ -249,6 +258,7 @@ public class Operation {
 
 
 	/** Appoinment*/
+	@Override
 	public List<AppoinmentDetails> takeAppoinment(List<AppoinmentDetails> appoinList,List<DoctorDetails> docList, List<PatientDetails> patList) throws IOException{
 
 		try {
@@ -335,6 +345,7 @@ public class Operation {
 	}
 
 	/**Search  Doctor*/
+	@Override
 	public List<DoctorDetails> searchDoctor(List<DoctorDetails> docList) {
 		for(int i=0 ;i<docList.size();i++) {
 			System.out.println(docList.get(i).getDoctorName());
@@ -351,6 +362,7 @@ public class Operation {
 		return docList;
 	}
 	/** Search Patient*/
+	@Override
 	public List<PatientDetails> searchPatient(List<PatientDetails> patList) {
 		for(int i=0 ;i<patList.size();i++) {
 			System.out.println(patList.get(i).getPatientName());

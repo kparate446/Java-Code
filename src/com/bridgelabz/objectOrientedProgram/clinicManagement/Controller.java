@@ -5,13 +5,13 @@ import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
 
-public class ClinicManagement {
+public class Controller {
 	static Scanner sc = new Scanner(System.in);
 	public static void main(String[] args) throws IOException {
 		PatientDetails patientDetails = new PatientDetails();
 		DoctorDetails doctorDetails = new DoctorDetails();
 		AppoinmentDetails appoinmentDetails = new AppoinmentDetails();
-		Operation operation = new Operation();
+		Service  serviceImp = new ServiceImp();
 		int choice = 0;
 
 
@@ -26,66 +26,66 @@ public class ClinicManagement {
 				//Add Doctor
 				case 1:
 					List<DoctorDetails> read1 = doctorDetails.readFile(); //reading json file
-					List<DoctorDetails> list1 =operation.addDoctor(read1); //method to add the Doctor
+					List<DoctorDetails> list1 =serviceImp.addDoctor(read1); //method to add the Doctor
 					doctorDetails.writeFile(list1); //writing data in json file
 					break;
 
 					// Add Patient
 				case 2:
 					List<PatientDetails> read2 = patientDetails.readFile(); //reading json file
-					List<PatientDetails> list2 =operation.addPatient(read2); //method to add the patient
+					List<PatientDetails> list2 =serviceImp.addPatient(read2); //method to add the patient
 					patientDetails.writeFile(list2); //writing data in json file
 					break;
 
 					// Doctor Details	
 				case 3:
 					List<DoctorDetails> read3 = doctorDetails.readFile(); //reading json file
-					operation.getDoctorDetails(read3); //get the Doctor Details
+					serviceImp.getDoctorDetails(read3); //get the Doctor Details
 					break;
 
 					// Patient Details
 				case 4:
 					List<PatientDetails> read4 = patientDetails.readFile(); //reading json file
-					operation.getPatientDetails(read4);// get the Patient Details
+					serviceImp.getPatientDetails(read4);// get the Patient Details
 					break;
 
 					// Appoinment Details
 				case 5:
 					List<AppoinmentDetails> read5 = appoinmentDetails.readFile(); //reading json file
-					operation.getAppoinmentDetails(read5); //get Appoinment Details
+					serviceImp.getAppoinmentDetails(read5); //get Appoinment Details
 					break;
 
 					// Remove Doctor
 				case 6:
 					List<DoctorDetails> read6 = doctorDetails.readFile(); //reading json file
-					List<DoctorDetails> list6 = operation.removeDoctor(read6); //method to remove Doctor
+					List<DoctorDetails> list6 = serviceImp.removeDoctor(read6); //method to remove Doctor
 					doctorDetails.writeFile(list6);	//writing data in json file
 					break;
 
 					// Remove Patient Details
 				case 7:
 					List<PatientDetails> read7 = patientDetails.readFile(); //reading json file
-					List<PatientDetails> list7 = operation.removePatient(read7); //method to remove stock
+					List<PatientDetails> list7 = serviceImp.removePatient(read7); //method to remove stock
 					patientDetails.writeFile(list7);	//writing data in json file
 					break;
 
 					// Removed Appoinment
 				case 8:
 					List<AppoinmentDetails> read8 = appoinmentDetails.readFile(); //reading json file
-					List<AppoinmentDetails> list8 = operation.removeAppoinment(read8); //method to remove Appoinment
+					List<AppoinmentDetails> list8 = serviceImp.removeAppoinment(read8); //method to remove Appoinment
 					appoinmentDetails.writeFile(list8);	//writing data in json file
 					break;
 
 					//Search Doctor
 				case 9:
 					List<DoctorDetails> read9 = doctorDetails.readFile(); //reading json file
-					operation.searchDoctor(read9); //method to Search the Doctor
+					serviceImp.searchDoctor(read9); //method to Search the Doctor
 					break;
 
 					//Search Patient
 				case 10 :
 					List<PatientDetails> read10 = patientDetails.readFile(); //reading json file
-					operation.searchPatient(read10); //method to Search the Patient
+					serviceImp.searchPatient(read10); //method to Search the Patient
 					break;	
 
 					// Take Appoinment
@@ -93,13 +93,13 @@ public class ClinicManagement {
 					List<AppoinmentDetails> read11 = appoinmentDetails.readFile(); //reading json file
 					List<DoctorDetails> docList = doctorDetails.readFile();
 					List<PatientDetails> patlist = patientDetails.readFile();
-					List<AppoinmentDetails> list11 =operation.takeAppoinment(read11,docList,patlist); //method to add the Appointment
+					List<AppoinmentDetails> list11 =serviceImp.takeAppoinment(read11,docList,patlist); //method to add the Appointment
 					appoinmentDetails.writeFile(list11); //writing data in json file
 					break;
 
 					// All Details
 				case 12:
-					Operation.Display(); // Dispaly the List
+					ServiceImp.Display(); // Dispaly the List
 					break;
 
 					//Exit

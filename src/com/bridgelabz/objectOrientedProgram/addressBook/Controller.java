@@ -8,9 +8,9 @@ import java.util.Scanner;
 import org.codehaus.jackson.JsonParseException;
 import org.codehaus.jackson.map.JsonMappingException;
 
-public class AddressBook {
+public class Controller {
 	public static void main(String[] args) throws JsonParseException, JsonMappingException, IOException {
-		Operation operation = new Operation();
+		Service service = new ServiceImp();
 		PersonDetails ps =new PersonDetails();
 		@SuppressWarnings("resource")
 		Scanner sc = new Scanner(System.in);
@@ -35,13 +35,13 @@ public class AddressBook {
 				
 				case 1:
 					List<PersonDetails> read1 = ps.readFile(); //reading json file
-					List<PersonDetails> list1 = operation.addPerson(read1); //method to add the person
+					List<PersonDetails> list1 = service.addPerson(read1); //method to add the person
 					ps.writeFile(list1); //writing data in json file
 					break;
 
 				case 2 :
 					List<PersonDetails> read2 = ps.readFile(); //reading json file
-					List<PersonDetails> list2 = operation.removePerson(read2); //method to remove the person
+					List<PersonDetails> list2 = service.removePerson(read2); //method to remove the person
 					ps.writeFile(list2); //writing data in json file
 					break;
 
@@ -57,7 +57,7 @@ public class AddressBook {
 					
 				case 4:
 					List<PersonDetails> read4 = ps.readFile(); //reading json file
-					List<PersonDetails> list4 = operation.sortLastName(read4); //method to sort the last name
+					List<PersonDetails> list4 = service.sortLastName(read4); //method to sort the last name
 //					ps.writeFile(list4); //writing data in json file
 					System.out.println("sorted last name");
 					for(PersonDetails pd : list4) {
@@ -67,7 +67,7 @@ public class AddressBook {
 					
 				case 5:
 					List<PersonDetails> read5 = ps.readFile(); //reading json file
-					List<PersonDetails> list5 = operation.sortzip(read5); //method to sort the last name
+					List<PersonDetails> list5 = service.sortzip(read5); //method to sort the last name
 //					ps.writeFile(list4); //writing data in json file
 					System.out.println("sorted zip");
 					for(PersonDetails pd : list5) {
@@ -77,7 +77,7 @@ public class AddressBook {
 				
 				case 6:
 					List<PersonDetails> read6 = ps.readFile(); //reading json file
-					List<PersonDetails> list6 = operation.sortAddress(read6); //method to sort the Address
+					List<PersonDetails> list6 = service.sortAddress(read6); //method to sort the Address
 //					ps.writeFile(list4); //writing data in json file
 					System.out.println("sorted address ");
 					for(PersonDetails pd : list6) {
@@ -87,7 +87,7 @@ public class AddressBook {
 					
 				case 7:
 					List<PersonDetails> read7 = ps.readFile(); //reading json file
-					List<PersonDetails> list7 = operation.editPerson(read7); //method to add the person
+					List<PersonDetails> list7 = service.editPerson(read7); //method to add the person
 					ps.writeFile(list7); //writing data in json file
 					break;
 				

@@ -11,7 +11,7 @@ import org.codehaus.jackson.map.ObjectMapper;
 import org.codehaus.jackson.type.TypeReference;
 
 public class PersonDetails { //POJO class
-	
+
 	String fname;
 	String lname;
 	String address;
@@ -19,14 +19,12 @@ public class PersonDetails { //POJO class
 	String state;
 	long zip;
 	long phone;
-	
-	
-	
+
 	public PersonDetails() {
 		super();
-		// TODO Auto-generated constructor stub
+
 	}
-	
+
 	public String getFname() {
 		return fname;
 	}
@@ -66,16 +64,16 @@ public class PersonDetails { //POJO class
 	public long getPhone() {
 		return phone;
 	}
-	public void setPhone(long phone) {
-		this.phone = phone;
+	public void setPhone(long string) {
+		this.phone = string;
 	}
-	
+
 	@Override
 	public String toString() {
 		return "AddressDetails [fname=" + fname + ", lname=" + lname + ", address=" + address + ", city=" + city
 				+ ", state=" + state + ", zip=" + zip + ", phone=" + phone + "]";
 	}
-	
+
 	static ObjectMapper mapper = new ObjectMapper();// JavaObject-JSON & Json-JavaObject                                             
 
 	/**Read The File*/
@@ -93,6 +91,6 @@ public class PersonDetails { //POJO class
 	public void writeFile(List<PersonDetails> list) throws JsonGenerationException, JsonMappingException, IOException { //writing data in json file
 		mapper.defaultPrettyPrintingWriter().writeValue(file, list); 
 	}
-	
-	
+
+
 }

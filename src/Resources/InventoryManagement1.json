@@ -1,8 +1,9 @@
-[ {
+[ 
+{
   "type" : "rice",
-  "name" : "bismati",
-  "weight" : 10,
-  "price" : 30.0
+  "name" : "Jasmine",
+  "weight" : 20,
+  "price" : 100.0
 }, {
   "type" : "pulses",
   "name" : "Local",
@@ -13,9 +14,4 @@
   "name" : "Mp",
   "weight" : 50,
   "price" : 20.0
-}, {
-  "type" : "rice",
-  "name" : "Jasmine",
-  "weight" : 20,
-  "price" : 100.0
 } ]

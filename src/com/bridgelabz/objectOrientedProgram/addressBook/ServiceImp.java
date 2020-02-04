@@ -7,13 +7,13 @@ import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
 
-//import com.sun.jmx.mbeanserver.Util;
 
-public class Operation {
+public class ServiceImp implements Service {
 	Scanner sc = new Scanner(System.in);
 	PersonDetails pd =new PersonDetails();
 
 	/**Add the PersonDetails*/	
+	@Override
 	public List<PersonDetails> addPerson(List<PersonDetails>listOfPerson){
 		System.out.println("Enter the First name");
 		pd.setFname(Utility.stringInput());
@@ -35,6 +35,12 @@ public class Operation {
 
 		System.out.println("Enter the Phone Number");
 		pd.setPhone(Utility.longInput());
+////		String k= Utility.isVali
+////		pd.setPhone(k);
+////		long k = Utility.isValid(Utility.stringInput());
+////		pd.setPhone(k);
+//		pd.setPhone(Utility.isValid((Utility.longInput())));
+		
 		int choice=0;
 		System.out.println("1.Submit \t 2.Exit");
 		choice = Utility.integerInput();
@@ -54,6 +60,7 @@ public class Operation {
 
 	/** Remove person
 	 * @param firstName */
+	@Override
 	public List<PersonDetails> removePerson(List<PersonDetails> list) { //method to remove stock from file
 		for (int i = 0; i < list.size(); i++) {
 			System.out.println(list.get(i).getFname()); //showing all data by name
@@ -74,6 +81,7 @@ public class Operation {
 	}
 	
 	//Remove Of Person In Edit Function
+	@Override
 	public List<PersonDetails> removePerson1(List<PersonDetails> list, String name) { //method to remove stock from file
 
 		for (int i = 0; i < list.size(); i++) {
@@ -110,6 +118,7 @@ public class Operation {
 
 	/** Edit User
 	 * @throws IOException */
+	@Override
 	public List<PersonDetails> editPerson(List<PersonDetails> list) throws IOException{
 		int num = 0;
 		int save = 0;
@@ -164,6 +173,9 @@ public class Operation {
 						case 6:
 							System.out.println("Enter the phone");
 							temp.setPhone(Utility.longInput());
+////							String k= Utility.isValid(Utility.stringInput());
+////							pd.setPhone(Utility.isValid((Utility.stringInput())));
+//							pd.setPhone(Utility.isValid((Utility.longInput())));
 							System.out.println("Details Save Successfully");
 							break;
 //						case 7:
@@ -247,6 +259,7 @@ public class Operation {
 	}
 
 	/**Sorted Zip*/
+	@Override
 	public List<PersonDetails>  sortzip(List<PersonDetails> listOfPerson){
 		for(int i=0 ;i<listOfPerson.size();i++) {
 			for(int j=0 ;j<listOfPerson.size();j++) {
@@ -262,6 +275,7 @@ public class Operation {
 	}
 
 	/**Sorted Last Name*/
+	@Override
 	public List<PersonDetails>  sortLastName(List<PersonDetails> listOfPerson){
 		for(int i=0 ;i<listOfPerson.size();i++) {
 			for(int j=0 ;j<listOfPerson.size();j++) {
@@ -277,6 +291,7 @@ public class Operation {
 	}
 
 	/**Sorted Address*/
+	@Override
 	public List<PersonDetails>  sortAddress(List<PersonDetails> listOfPerson){
 		for(int i=0 ;i<listOfPerson.size();i++) {
 			for(int j=0 ;j<listOfPerson.size();j++) {

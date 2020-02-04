@@ -9,15 +9,18 @@ import java.util.List;
 
 import com.bridgelabz.objectOrientedProgram.stock.Utility;
 
-public class Operations {
+public class ServiceImpl implements Service {
 	Utility Utility =new Utility();
 
 	/**Add Inventory*/
+	@Override
 	@SuppressWarnings("static-access")
 	public List<Properties> addInventory(List<Properties> list) { //method to add new inventory
 		Properties properties = new Properties();
 		try {
 			//taking data from user
+			System.out.println("Enter name of Type");
+			properties.setType(Utility.stringValidation(Utility.stringInput()));
 			System.out.println("Enter name of inventory: ");
 			properties.setName(Utility.stringValidation(Utility.stringInput()));
 			System.out.println("Enter weight of inventory: ");
@@ -27,7 +30,20 @@ public class Operations {
 		} catch (InputMismatchException e) {
 			System.out.println("enter valid input!");
 		}
-		list.add(properties);	//adding data to list of inventory
+		int choice=0;
+		System.out.println("1.Submit \t 2.Exit");
+		choice = Utility.integerInput();
+		switch (choice) {
+		case 1:
+			list.add(properties);	//adding data to list of inventory
+			break;
+		case 2:
+			return list ;
+		default:
+			break;
+		}
+		
+//		list.add(properties);	//adding data to list of inventory
 		System.out.println("Inventory Added Successsfully!!");
 		//		System.out.println("Inventory added successfully!!\nTo add more press 1\nTo exit press 0 ");
 		//		int a = Utility.integerInput();
@@ -37,6 +53,7 @@ public class Operations {
 	}
 
 	/**Remove Inventory*/
+	@Override
 	public List<Properties> removeType(List<Properties> list) {	//method to remove inventory data
 		for (int i = 0; i < list.size(); i++) {
 			System.out.println(list.get(i).getName()); //showing available inventories
@@ -65,6 +82,7 @@ public class Operations {
 	}
 
 	/** Calculation*/
+	@Override
 	public void calculations(List<Properties> list) {	//method to calculate price of inventory
 		for (int i = 0; i < list.size(); i++) {
 			System.out.println(list.get(i).getName()); //showing all inventories
@@ -92,6 +110,7 @@ public class Operations {
 	}
 
 	/**Total Calculation*/
+	@Override
 	public List<Properties> Totalcalculation(List<Properties> list) {
 		float temp=0;
 		for (int i = 0; i < list.size(); i++) {
@@ -103,7 +122,8 @@ public class Operations {
 		System.out.println("Total Inventory: "+temp);
 		return list;
 	}
-	// Add the Type
+	/** Add the Type*/
+	@Override
 	public List<Properties> addType(List<Properties> list) { //method to add new inventory
 		Properties properties = new Properties();
 		for (int i = 0; i < list.size(); i++) {
@@ -128,7 +148,20 @@ public class Operations {
 					properties.setPrice(Utility.longInput());
 				} 
 			}
-			list.add(properties);	//adding data to list of inventory
+			int choice=0;
+			System.out.println("1.Submit \t 2.Exit");
+			choice = Utility.integerInput();
+			switch (choice) {
+			case 1:
+				list.add(properties);	//adding data to list of type
+				break;
+			case 2:
+				return list ;
+			default:
+				break;
+			}
+			
+//			list.add(properties);	//adding data to list of inventory
 			System.out.println("Type Added Successsfully!!");
 			return list;	//returning list of inventory data
 		}catch (InputMismatchException e) {
@@ -136,13 +169,14 @@ public class Operations {
 		}
 		return list;
 	}
-	// Remove the Type
+	/** Remove the Type */
+	@Override
 	public List<Properties> removeInventory(List<Properties> list) {	//method to remove inventory data
 		for (int i = 0; i < list.size(); i++) {
 			System.out.println(list.get(i).getType()); //showing available inventories
 		}
 		boolean find = false;
-		System.out.println("Enter name of Inventory to be removed: ");
+		System.out.println("Enter name of Type to be removed: ");
 		try {
 			@SuppressWarnings("static-access")
 			String name = Utility.stringValidation(Utility.stringInput()); 

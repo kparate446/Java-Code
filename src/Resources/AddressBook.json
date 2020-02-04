@@ -15,19 +15,27 @@
   "zip" : 6565,
   "phone" : 54
 }, {
-  "fname" : "kunal",
-  "lname" : "parate",
-  "address" : "belona",
-  "city" : "mjki",
-  "state" : "mh",
-  "zip" : 142536,
-  "phone" : 986542541
+  "fname" : "swapnil",
+  "lname" : "Kagane",
+  "address" : "Karve nagar",
+  "city" : "Pune",
+  "state" : "MH",
+  "zip" : 445522,
+  "phone" : 9862354123
 }, {
-  "fname" : "847",
-  "lname" : "hjdgsfjh",
-  "address" : "78",
-  "city" : "74",
-  "state" : "78",
-  "zip" : 564564,
-  "phone" : 561564
+  "fname" : "vikky",
+  "lname" : "ghate",
+  "address" : "nandanvan",
+  "city" : "nagpur",
+  "state" : "mh",
+  "zip" : 412563,
+  "phone" : 9862365412
+}, {
+  "fname" : "Sopu",
+  "lname" : "Phki",
+  "address" : "jhgj",
+  "city" : "gjhg",
+  "state" : "kh",
+  "zip" : 254,
+  "phone" : 2543435767
 } ]

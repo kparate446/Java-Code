@@ -15,7 +15,7 @@ public class InventoryManagement {
 
 	public static void main(String[] args) throws IOException {
 		Controller controller = new Controller();
-		Operations operations = new Operations();
+		Service  serviceImpl = new ServiceImpl();
 		@SuppressWarnings("resource")
 		Scanner sc = new Scanner(System.in);
 		int choice = 0;
@@ -49,17 +49,17 @@ public class InventoryManagement {
 
 							e.printStackTrace();
 						} // reading json file
-						List<Properties> list1 = operations.addType(read1); //to add inventory 
+						List<Properties> list1 = serviceImpl.addType(read1); //to add inventory 
 						controller.writeFile(list1); 
 						break;
 					case 2:
 						List<Properties> read2 = controller.readFile(); // reading json file
-						List<Properties> list2 = operations.removeInventory(read2); // to remove inventory
+						List<Properties> list2 = serviceImpl.removeInventory(read2); // to remove inventory
 						controller.writeFile(list2); 
 						break;
 					case 3:
 						List<Properties> read3 = controller.readFile(); // reading json file
-						operations.calculations(read3); 
+						serviceImpl.calculations(read3); 
 						break;
 						//Total Calulation Of Inventory
 					case 4:
@@ -70,19 +70,19 @@ public class InventoryManagement {
 
 							e.printStackTrace();
 						} // reading json file
-						List<Properties> list5 = operations.Totalcalculation(read5);; //to add inventory 
+						List<Properties> list5 = serviceImpl.Totalcalculation(read5);; //to add inventory 
 						controller.writeFile(list5); 
 						break;
 
 					case 5:
 						List<Properties> read6 = controller.readFile(); // reading json file
-						List<Properties> list6 = operations.addInventory(read6); // to remove inventory
+						List<Properties> list6 = serviceImpl.addInventory(read6); // to remove inventory
 						controller.writeFile(list6); 
 						break;
 
 					case 6:
 						List<Properties> read7 = controller.readFile(); // reading json file
-						List<Properties> list7 = operations.removeType(read7); // to remove inventory
+						List<Properties> list7 = serviceImpl.removeType(read7); // to remove inventory
 						controller.writeFile(list7); 
 						break;
 

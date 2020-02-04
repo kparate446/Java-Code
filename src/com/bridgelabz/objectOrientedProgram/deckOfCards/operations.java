@@ -6,9 +6,9 @@ import java.util.Random;
 
 public class operations {
 	// different types of cards
-//	static String suit[] = { "Clubs", "Diamonds", "Hearts", "Spades" };
+	//	static String suit[] = { "Clubs", "Diamonds", "Hearts", "Spades" };
 	static String suit[] = { "♣","♦","♥","♠"};
-//	static String rank[] = { "2", "3", "4", "5", "6", "7", "8", "9", "10 ", "jack", "Queen", "King", "Ace" };
+	//	static String rank[] = { "2", "3", "4", "5", "6", "7", "8", "9", "10 ", "jack", "Queen", "King", "Ace" };
 	static String rank[] = {"A","2", "3", "4", "5","6", "7", "8", "9", "10", "J","Q", "K"};
 	// take input from users no. of players and distribute cards
 	public static int players = 4;
@@ -33,7 +33,7 @@ public class operations {
 			}
 		}
 	}
-   //***
+	//***
 	public static void playerscards() {
 		allotcards = new String[playcards][players];
 		if (totalcards >= (playcards * players)) { // check all players are card not greater the total cards
@@ -48,7 +48,7 @@ public class operations {
 
 	}
 
-//shuffle cards if repeated else allot
+	//shuffle cards if repeated else allot
 	public static void shuffleCards(int i, int j) {
 		while (j < players) {
 			int x = getRandomCard();
@@ -56,7 +56,6 @@ public class operations {
 			check.add(x);
 			j++;
 		}
-
 	}
 
 	// generate unique random number
@@ -75,7 +74,6 @@ public class operations {
 			System.out.print("Card:"+(i+1)+"-->  ");
 			for (int j = 0; j < players; j++) {
 				if (allotcards[i][j] != null)
-//					System.out.print("Player"+i);
 					System.out.print(allotcards[i][j] + "  | ");
 			}
 			System.out.println();

@@ -17,9 +17,7 @@ public class Controller {
 		int choice = 0;
 		List<PersonDetails> list = ps.readFile();
 		System.out.println("Details");
-
 		// Show details
-
 		for(PersonDetails pd : list) {
 			System.out.println("Person name:"+ pd.getFname().toUpperCase()+", Last name:"+pd.getLname().toUpperCase()+", Address:"+pd.getAddress());
 			System.out.println("City:"+pd.getCity()+", State:"+pd.getState()+", Zip:"+pd.getZip()+", Phone:"+pd.getPhone());

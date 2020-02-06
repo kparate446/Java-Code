@@ -8,10 +8,11 @@ public class OracleHelper {
 	}
 	
 	public void generateOraclePDFReport(String tableName, Connection con){
-		//get data from table and generate pdf report
+		System.out.println("Generate Oracle Pdf Report");
 	}
 	
 	public void generateOracleHTMLReport(String tableName, Connection con){
+		System.out.println("Generate Oracle HTML Report");
 		//get data from table and generate pdf report
 	}
 	

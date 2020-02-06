@@ -3,7 +3,7 @@ package com.bridgelabz.designPatternProgram.PrototypeDesignPattern.Prototype;
 import java.util.ArrayList;
 import java.util.List;
 
-public class BookShop {
+public class BookShop implements Cloneable {
 	private String shopName;
 	List<Book>books = new ArrayList<>();
 	public String getShopName() {
@@ -33,6 +33,7 @@ public class BookShop {
 		return "BookShop [shopName=" + shopName + ", books=" + books + "]";
 	}
 	@Override
+	// Fetching the data into old to new object
 	protected BookShop clone() throws CloneNotSupportedException {
 		BookShop shop = new BookShop();
 		for(Book b : this.getBooks()) {

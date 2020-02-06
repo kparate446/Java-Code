@@ -1,3 +1,4 @@
+/**Synchronized the Method*/
 package com.bridgelabz.designPatternProgram.singletonPattern;
 
 public class ThreadSafeSingleton {

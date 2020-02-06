@@ -2,11 +2,8 @@ package com.bridgelabz.designPatternProgram.structuralDesignPattern.adapterDesig
 
 public class PenAdopter implements Pen {
 	PilotPen pp =new PilotPen();
-
 	@Override
 	public void write(String str) {
 		pp.mark(str);
-		
 	}
-	
 }

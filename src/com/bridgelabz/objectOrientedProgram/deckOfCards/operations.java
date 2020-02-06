@@ -33,7 +33,7 @@ public class operations {
 			}
 		}
 	}
-	//***
+	//***check all players are card not greater the total cards
 	public static void playerscards() {
 		allotcards = new String[playcards][players];
 		if (totalcards >= (playcards * players)) { // check all players are card not greater the total cards

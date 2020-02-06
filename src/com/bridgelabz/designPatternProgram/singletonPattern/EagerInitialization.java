@@ -5,6 +5,7 @@ public class EagerInitialization{
 	public static void main(String[] args) {
 		//	 EagerInitializedSingleton eagerInitializedSingleton = new EagerInitializedSingleton();// Two Time Object call
 		EagerInitializedSingleton.getInstance();
+//		EagerInitializedSingleton.getInstance();
 	}
 }
 

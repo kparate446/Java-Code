@@ -63,7 +63,7 @@ public class ServiceImp implements Service {
 		//		doctorDetails.setSpecialization(Utility.stringInput());
 
 		System.out.println("Enter the Availability");
-		doctorDetails.setAvailability(Utility.stringValidation(Utility.stringInput()));
+		doctorDetails.setAvailability(Utility.stringInput());
 		
 		int choice=0;
 		System.out.println("1.Submit \t 2.Exit");

@@ -1,9 +1,13 @@
 package com.bridgelabz.designPatternProgram.singletonPattern;
 
+/**static block provide Exception handling
+ * created object in try block*/
+
 public class StaticBlockSingleton {
 	public static void main(String[] args) {
 		
 		StaticBlock.getInstance();
+//		StaticBlock.getInstance();
 	}
 }
 class StaticBlock{

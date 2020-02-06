@@ -1,3 +1,4 @@
+/**Initially object in Null*/
 package com.bridgelabz.designPatternProgram.singletonPattern;
 
 public class LazyInstantiation {

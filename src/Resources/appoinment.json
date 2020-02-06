@@ -5,4 +5,11 @@
   "doctorSpecialization" : "BAMS",
   "doctorAvaibility" : "Evening",
   "doctorAppointment" : 1
+}, {
+  "doctorName" : "Manoj",
+  "patientId" : 4,
+  "patientName" : "Nisha",
+  "doctorSpecialization" : "Migrane",
+  "doctorAvaibility" : "10-2 PM",
+  "doctorAppointment" : 1
 } ]

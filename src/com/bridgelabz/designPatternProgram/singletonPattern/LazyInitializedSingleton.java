@@ -1,3 +1,4 @@
+/**Initially object in Null*/
 package com.bridgelabz.designPatternProgram.singletonPattern;
 
 public class LazyInitializedSingleton {
@@ -11,7 +12,7 @@ class LazyInitialized{
 	private static LazyInitialized instance; // object created in bellow
 	
 	private LazyInitialized () {
-		System.out.println("Hii");
+		System.out.println("Hi");
 	}
 	public static LazyInitialized getInstance() {
 		if(instance == null) {

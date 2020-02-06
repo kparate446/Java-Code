@@ -15,5 +15,17 @@
   "doctorId" : 103,
   "specialization" : "Migrane",
   "availability" : "10-2 PM",
+  "appoinment" : 1
+}, {
+  "doctorName" : "Soham",
+  "doctorId" : 105,
+  "specialization" : "MBBS",
+  "availability" : "morning",
+  "appoinment" : 0
+}, {
+  "doctorName" : "RAm",
+  "doctorId" : 106,
+  "specialization" : "BAMS",
+  "availability" : "10AM - 1PM",
   "appoinment" : 0
 } ]

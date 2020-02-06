@@ -71,6 +71,6 @@ public class PatientDetails {
 	// Write the file
 	@SuppressWarnings("deprecation")
 	public void writeFile(List<PatientDetails> list) throws IOException {	//writing json file
-		mapper.defaultPrettyPrintingWriter().writeValue(file, list); // writing data in inventory json file
+		mapper.enableDefaultTyping().writeValue(file, list); // writing data in inventory json file
 	}
 }

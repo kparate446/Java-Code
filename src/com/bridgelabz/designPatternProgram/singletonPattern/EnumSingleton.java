@@ -1,3 +1,4 @@
+/**class name-Enum , Singletonclass- INSTANCE */
 package com.bridgelabz.designPatternProgram.singletonPattern;
 
 public class EnumSingleton {

@@ -10,10 +10,12 @@ public class MySqlHelper {
 	}
 	
 	public void generateMySqlPDFReport(String tableName, Connection con){
+		System.out.println("Generate SQL Pdf Report");
 		//get data from table and generate pdf report
 	}
 	
 	public void generateMySqlHTMLReport(String tableName, Connection con){
+		System.out.println("Generate SQL HTML Report");
 		//get data from table and generate pdf report
 	}
 }

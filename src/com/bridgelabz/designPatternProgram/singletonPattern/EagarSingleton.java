@@ -1,12 +1,14 @@
 package com.bridgelabz.designPatternProgram.singletonPattern;
 
+// Loaded the memory
+
 public class EagarSingleton {
 	public static void main(String[] args) {
 		//		Abc abc =new Abc(); // Error Because Constructor is private
 		Abc obj = Abc.getInstance(); // (or) Abc.getInstance()
 		//		Abc obj1 = Abc.getInstance();// Only call Only one Object
 		//		Abc obj2 = Abc.getInstance();
-
+		
 	}
 }
 class Abc {

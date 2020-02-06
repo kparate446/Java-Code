@@ -1,5 +1,5 @@
+/** serialilize in the inner class*/
 package com.bridgelabz.designPatternProgram.singletonPattern;
-
 
 import java.io.Serializable;
 

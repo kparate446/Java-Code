@@ -36,7 +36,7 @@ public class Utility {
 	public static String stringInput() {
 		String c =null;
 		try {
-		c= sc.nextLine();
+		c= sc.next();
 		}catch (Exception e) {
 			System.out.println("Please Enter the String Value");
 //			 sc.nextLine();

@@ -1,11 +1,14 @@
 package com.bridgelabz.jdbcStatement.demo;
 import java.sql.*;
 import java.util.Scanner;
+
+import com.bridgelabz.jdbcStatement.services.ServiceImplementation;
 public class ShowDataPositionAdd {
 
 	public static void main(String[] args) throws Exception {
 		Scanner sc = new Scanner(System.in);
 		StudentData data = new StudentData();
+	
 		Student1 s1 = new Student1();
 //		System.out.println("Select choice");
 //		int key = sc.nextInt();
@@ -34,7 +37,7 @@ public class ShowDataPositionAdd {
 	}
 }
 class StudentData{
-	Connection con = null;
+	Connection con ;
 
 	public void connect() {
 		try {
@@ -110,3 +113,4 @@ class Student1{
 	String Branch;
 	int mark;
 }
+// CRUD

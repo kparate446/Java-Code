@@ -21,9 +21,7 @@ class StudentDao {
 		String name = rs.getString(1);
 //		String name = rs.getString(1)+" : "+rs.getString(2)+" : "+rs.getInt(3);
 		s.Sname = name;
-		
 		return s;
-		
 	}
 }
 class Student{

@@ -1,6 +1,9 @@
+/**
+ * Created By:- Krunal Parate
+ * Date:-
+ * Purpose:-Desc ->Statement Using JDBC
+ */
 package com.bridgelabz.jdbcStatement.controller;
-
-import java.sql.*;
 import com.bridgelabz.jdbcStatement.model.Student;
 import com.bridgelabz.jdbcStatement.repository.DatabaseConnectivity;
 import com.bridgelabz.jdbcStatement.services.ServiceImpStatement;
@@ -9,8 +12,6 @@ import com.bridgelabz.stock.Utility;
 public class StatementMainClass {
 	@SuppressWarnings("static-access")
 	public static void main(String[] args) throws Exception {
-
-		//Scanner sc = new Scanner(System.in);
 		Student student = new Student();
 		DatabaseConnectivity connectivity = new DatabaseConnectivity();
 		ServiceImpStatement impl = new ServiceImpStatement();
@@ -22,7 +23,6 @@ public class StatementMainClass {
 			System.out.println("Enter your choice");
 			choice = Utility.integerInput();
 			switch (choice) {
-
 			case 1:
 				impl.showTable();
 				System.out.println("Insert Data for Student:-");
@@ -47,12 +47,12 @@ public class StatementMainClass {
 					break;
 				}
 				break;
-			case 2://
+			case 2:
 				impl.showTable();
 				System.out.println("Which Position of data you want?");
 				int num = Utility.integerInput();
 				Student data = impl.PositionOfData(num);
-//				System.out.println(num+" : "+data.Sname+" : "+data.Branch+" : "+data.mark);
+				//				System.out.println(num+" : "+data.Sname+" : "+data.Branch+" : "+data.mark);
 				break;
 			case 3: 
 				System.out.println("Show the Data");
@@ -85,14 +85,15 @@ public class StatementMainClass {
 				}
 				break;
 			case 6:
-				System.out.println("Creating table");
+				System.out.println("Enter The Name Of Creating table");
 				//	if(impl.createTable()!=0) {
 				//		System.out.println("Table Exist");
 				//	}
 				//	else {
 				//		System.out.println("Table Created Successfully");
 				//	}
-				impl.createTable();
+				String name =Utility.stringInput();
+				impl.createTable(name);
 				break;
 			case 7:
 				System.out.println("Thank You!");
@@ -104,7 +105,6 @@ public class StatementMainClass {
 
 		}while(choice!=10);
 	}
-
 }
 
 

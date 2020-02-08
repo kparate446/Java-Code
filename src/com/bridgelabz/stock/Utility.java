@@ -13,7 +13,7 @@ public class Utility {
 	static Scanner sc = new Scanner(System.in);
 	
 	public static int integerInput() {
-		int a=0;
+		int a = 0;
 		try {
 		 a=sc.nextInt();
 		}catch (Exception e) {

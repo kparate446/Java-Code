@@ -1,5 +1,9 @@
+/**
+ * Created By:- Krunal Parate
+ * Date:-
+ * Purpose:-Desc -> Collable Statement Using JDBC
+ */
 package com.bridgelabz.jdbcStatement.controller;
-
 import java.util.Scanner;
 import com.bridgelabz.jdbcStatement.model.Student;
 import com.bridgelabz.jdbcStatement.repository.DatabaseConnectivity;
@@ -14,7 +18,7 @@ public class CollableMainClass {
 		Student student = new Student();
 		DatabaseConnectivity connectivity = new DatabaseConnectivity();
 		ServiceImpCollable impl = new ServiceImpCollable();
-				int choice =0;
+		int choice =0;
 		//CRUD
 		do {
 			System.out.println();
@@ -29,7 +33,7 @@ public class CollableMainClass {
 				student.Sid = Utility.integerInput();
 				System.out.println("Enter the Student Name");
 				student.Sname = Utility.stringInput();
-//				student.Sname = Utility.stringInput();
+				//student.Sname = Utility.stringInput();
 				System.out.println("Enter the Branch Of Student");
 				student.Branch = Utility.stringInput();
 				System.out.println("Enter the mark of Student");
@@ -51,8 +55,8 @@ public class CollableMainClass {
 				impl.showTable();
 				System.out.println("Which Position of data you want?");
 				int num = Utility.integerInput();
-				 impl.PositionOfData(num);
-//				System.out.println(num+" : "+data.Sname+" : "+data.Branch+" : "+data.mark);
+				impl.PositionOfData(num);
+				//System.out.println(num+" : "+data.Sname+" : "+data.Branch+" : "+data.mark);
 				break;
 			case 3: 
 				System.out.println("Show the Data");
@@ -87,14 +91,11 @@ public class CollableMainClass {
 			case 6:
 				System.out.println("Thank You!");
 				return;
-
 			default:
 				break;	
 			}
-
 		}while(choice!=10);
 	}
-
 }
 
 

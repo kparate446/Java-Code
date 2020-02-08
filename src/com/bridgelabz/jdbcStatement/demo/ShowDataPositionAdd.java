@@ -1,8 +1,6 @@
 package com.bridgelabz.jdbcStatement.demo;
 import java.sql.*;
 import java.util.Scanner;
-
-import com.bridgelabz.jdbcStatement.services.ServiceImplementation;
 public class ShowDataPositionAdd {
 
 	public static void main(String[] args) throws Exception {

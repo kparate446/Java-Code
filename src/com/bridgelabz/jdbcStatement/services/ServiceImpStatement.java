@@ -13,13 +13,14 @@ public class ServiceImpStatement {
 	static Statement statement = null;
 	static Connection con = DatabaseConnectivity.connect();
 	static Student student = new Student();
-	
+
 	/** Show the data From Perticular Position*/
 	public static Student PositionOfData(int Sid) throws Exception { // Perticular Position
 		String query = "SELECT Sname,Branch,mark FROM Students WHERE Sid="+Sid;
 		Student s = new Student();
 		DatabaseConnectivity.connect();
 		Statement st = con.createStatement();
+		//query is a select query.
 		ResultSet rs = st.executeQuery(query);
 		rs.next();
 		String name = rs.getString(1);
@@ -34,7 +35,7 @@ public class ServiceImpStatement {
 		String query = "insert into Students values("+Sid+",'"+Sname+"','"+Branch+"',"+mark+")";
 		try {
 			Statement st = con.createStatement();//Execute Query
-			st.executeUpdate(query);
+			st.executeUpdate(query);//executes the query. It is used for create, drop, insert, update, delete etc
 			System.out.println("Student Added");
 		} catch (Exception e) {
 			System.out.println(e);
@@ -46,7 +47,7 @@ public class ServiceImpStatement {
 		try {
 			DatabaseConnectivity.connect();
 			Statement st = con.createStatement();
-			st.executeUpdate(query);
+			st.executeUpdate(query);//executes the query. It is used for create, drop, insert, update, delete etc
 			System.out.println("Deleted the Student");
 		}catch(Exception e) {
 			System.out.println(e);
@@ -56,6 +57,7 @@ public class ServiceImpStatement {
 	public static void showTable() throws SQLException {
 		DatabaseConnectivity.connect();
 		Statement st = con.createStatement();
+		////query is a select query.
 		ResultSet rs=st.executeQuery("SELECT * FROM Students");  
 		while(rs.next()){  
 			System.out.println(rs.getInt(1)+" : "+rs.getString(2)+" : "+rs.getString(3)+" : "+rs.getInt(4));  
@@ -68,20 +70,21 @@ public class ServiceImpStatement {
 		try {
 			DatabaseConnectivity.connect();
 			Statement st = con.createStatement();
-			st.executeUpdate(query);
+			st.executeUpdate(query);//executes the query. It is used for create, drop, insert, update, delete etc
 			System.out.println("Student Data Update Successfully");
 		} catch (Exception e) {
 			System.out.println(e);
 		}
 		return student;
 	}
-	//
-	public int createTable() throws SQLException {
-//		DatabaseConnectivity.connect();
-//		String query = "CREATE TABLE Students"+"(Sid int primary key,"+"Sname varchar(50),"+"Branch varchar(20),"+"mark float)";
-		String query = "CREATE TABLE Students (Sid int AUTO_INCREMENT PRIMARY KEY,Sname varchar(100),Branch varchar(50),mark float)";
+	/** Create the Table*/
+	public int createTable(String name) throws SQLException {
+		//		DatabaseConnectivity.connect();
+		//		String query = "CREATE TABLE Students"+"(Sid int primary key,"+"Sname varchar(50),"+"Branch varchar(20),"+"mark float)";
+		//		String query = "CREATE TABLE Students (Sid int AUTO_INCREMENT PRIMARY KEY,Sname varchar(100),Branch varchar(50),mark float)";
+		String query = "CREATE TABLE"+name+" (Sid int AUTO_INCREMENT PRIMARY KEY,Sname varchar(100),Branch varchar(50),mark float)";
 		DatabaseConnectivity.connect();
 		Statement st = con.createStatement();
-		return st.executeUpdate(query);
+		return st.executeUpdate(query);//executes the query. It is used for create, drop, insert, update, delete etc
 	}
 }

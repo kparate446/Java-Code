@@ -26,6 +26,7 @@ public class ServiceImpStatement {
 		String branch = rs.getString(2);
 		int mark = rs.getInt(3);
 		s.Sname = name;s.Branch = branch;s.mark = mark;
+		System.out.println(Sid+" : "+rs.getString(1)+" : "+rs.getString(2)+" : "+rs.getInt(3));
 		return s;
 	}
 	/**Insert the Student Data*/
